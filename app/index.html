@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
@@ -8,38 +8,398 @@
     <meta name="format-detection" content="address=no">
 
     <title>Title</title>
-
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
 
 </head>
 <body>
 
-    <!-- site -->
-    <div class="site">
+<div class="site">
+
+    <!-- site__tabs -->
+    <div class="site__tabs">
+
+        <!-- plastic -->
+        <a class="plastic active" href="#">Пластическая хирургия</a>
+        <!-- /plastic -->
+
+        <!-- maxillofacial -->
+        <a class="maxillofacial" href="#">Челюстно-лицевая хирургия</a>
+        <!-- /maxillofacial -->
+
+        <!-- stomatology -->
+        <a class="stomatology" href="#">Стоматология</a>
+        <!-- /stomatology -->
 
     </div>
-    <!-- /site -->
+    <!-- /site__tabs -->
 
-    <!-- popup -->
-    <div class="popup">
+    <header class="site__header">
 
-        <!-- popup__wrap -->
-        <div class="popup__wrap">
+        <h1 class="logo"><img src="img/logo.png" width="" height="" alt=""></h1><!-- /logo -->
 
-            <!-- popup__content -->
-            <div class="popup__content popup__text">
+        <!-- menu -->
+        <nav class="header__menu">
+
+            <!-- menu__btn -->
+            <button class="header__menu-btn"><span></span>Меню</button>
+            <!-- /menu__btn -->
+
+            <!-- menu__wrap -->
+            <div class="header__menu-wrap">
+                <a href="#">Об отделении</a>
+                <a href="#">Специалисты</a>
+                <a href="#">Фото до и после</a>
+                <a href="#">Отзывы</a>
+                <a href="#">Пациентам</a>
+                <a href="#">Контакты</a>
+            </div>
+            <!-- /menu__wrap -->
+
+        </nav>
+        <!-- /menu -->
+
+        <!-- site__header-work-time -->
+        <div class="site__header-work-time">
+            <span>Будни: 9:00 – 21:00</span>
+            <span>Суббота: 9:00 – 17:00</span>
+        </div>
+        <!-- /site__header-work-time -->
+
+        <!-- site__header-tel -->
+        <div class="site__header-tel">
+            Многоканальный телефон:
+            <a href="tel:+7347248-30-03">+7 (347) 248 - 30 - 03</a>
+            <a href="tel:+7347248-59-09">+7 (347) 248 - 59 - 09</a>
+            <span class="site__header-request">Оставить заявку</span>
+        </div>
+        <!-- /site__header-tel -->
+
+    </header>
+    <!-- /site__header -->
+
+    <div class="site__content">
+
+        <!-- site__aside -->
+        <aside class="site__aside">
+
+            <!-- aside-menu -->
+            <nav class="aside-menu">
+
+                <!-- aside-menu__btn -->
+                <button class="aside-menu__btn"><span></span>Услуги</button>
+                <!-- /aside-menu__btn -->
+
+                <!-- aside-menu__wrap -->
+                <ul class="aside-menu__wrap">
+                    <li>
+                        <span>Лифтинг лица
+                            + SMAS круговая</span>
+                        <ul>
+                            <li><a class="aside-menu__links" href="#">Увеличение груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Подтяжка груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Уменьшение груди</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Ринопластика</span>
+                        <ul>
+                            <li><a class="aside-menu__links" href="#">Увеличение груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Подтяжка груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Уменьшение груди</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Отопластика</span>
+                        <ul>
+                            <li><a class="aside-menu__links" href="#">Увеличение груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Подтяжка груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Уменьшение груди</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>3D - коррекция лица
+                            филлерами</span>
+                        <ul>
+                            <li><a class="aside-menu__links" href="#">Увеличение груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Подтяжка груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Уменьшение груди</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Коррекция молочных
+                            желез</span>
+                        <ul>
+                            <li><a class="aside-menu__links" href="#">Увеличение груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Подтяжка груди</a></li>
+                            <li><a class="aside-menu__links" href="#">Уменьшение груди</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /aside-menu__wrap -->
+
+            </nav>
+            <!-- /aside-menu -->
+
+        </aside>
+        <!-- /site__aside -->
+
+        <!-- site__content-layout -->
+        <div class="site__content-layout">
+
+            <!-- slider -->
+            <div class="slider">
+
+                <!-- Swiper -->
+                <div class="swiper-container slider__wrap">
+
+                    <div class="swiper-wrapper">
+
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <div class="slider__layout" style="background-image: url(pic/main-slider.jpg)">
+                                <div class="slider__title">
+                                    <h2>улучшение
+                                        контура лица</h2>
+                                    <span>Без осложнений, инфици-
+                                        рования и ускорить процесс</span>
+                                    <a class="slider__more" href="#">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider__layout" style="background-image: url(pic/main-slider.jpg)">
+                                <div class="slider__title">
+                                    <h2>улучшение
+                                        контура лица</h2>
+                                    <span>Без осложнений, инфици-
+                                        рования и ускорить процесс</span>
+                                    <a class="slider__more" href="#">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /Swiper -->
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination slider__icon"></div>
+                    <!-- /Add Pagination -->
+
+                </div>
 
             </div>
-            <!-- /popup__content -->
+            <!-- slider -->
+
+            <!-- plastic surgery -->
+            <div class="plastic-surgery">
+
+            <!-- site__title -->
+            <h2 class="site__title">пластическая хирургия
+                <span>аг фабер дентаплант</span></h2>
+            <!-- site__title -->
+
+            <p>Повседневная практика показывает, что реализация намеченных плановых заданий требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа систем массового участия:</p>
+            <ul>
+                <li>В формировании позиций, занимаемых участниками;</li>
+                <li>В отношении поставленных задач; </li>
+                <li>Задача организации, в особенности же рамки и место обучения кадров представляет собой;</li>
+                <li>Интересный эксперимент проверки направлений прогрессивного развития.</li>
+                <li>Задача организации, в особенности же рамки и место обучения кадров представляет собой.</li>
+            </ul>
+
+            </div>
+            <!-- /plastic surgery -->
+
+            <!-- photo -->
+            <div class="photo">
+
+                <!-- site__title -->
+                <h2 class="site__title">фото «до и после»
+                    <a class="reviews__all" href="#">Все фотографии</a>
+                </h2>
+                <!-- /site__title -->
+
+                <!-- slider -->
+                <div class="photo__slider">
+
+                    <!-- Swiper -->
+                    <div class="swiper-container photo__wrap">
+
+                        <div class="swiper-wrapper">
+
+                            <!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <div class="photo__item" style="background-image: url(pic/photo-pic01.jpg)">
+                                    <span>До</span>
+                                </div>
+                                <div class="photo__item" style="background-image: url(pic/photo-pic02.jpg)">
+                                    <span>После</span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="photo__item" style="background-image: url(pic/photo-pic01.jpg)">
+                                    <span>До</span>
+                                </div>
+                                <div class="photo__item" style="background-image: url(pic/photo-pic02.jpg)">
+                                    <span>После</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /Swiper -->
+
+                    </div>
+
+                    <!-- swiper-button-next -->
+                    <div class="photo-button-next"></div>
+                    <!-- /swiper-button-next -->
+
+                    <!-- swiper-button-prev -->
+                    <div class="photo-button-prev"></div>
+                    <!-- /swiper-button-prev -->
+
+                </div>
+                <!-- slider -->
+
+
+            </div>
+            <!-- /photo -->
+
+            <!-- reviews -->
+            <div class="reviews">
+
+                <!-- site__title -->
+                <h2 class="site__title">отзывы
+                    <a class="reviews__all" href="#">Все отзывы</a>
+                </h2>
+                <!-- /site__title -->
+
+                <!-- reviews__item -->
+                <div class="reviews__item">
+
+                    <!-- reviews__item -->
+                    <a class="reviews__item-title" href="#">Увеличение груди</a>
+                    <!-- /reviews__item -->
+
+                    <!-- reviews__item-user -->
+                    <div class="reviews__item-user">Марина Петрова  • <time datetime="2016-02-14">14.02.16</time></div>
+                    <!-- /reviews__item-user -->
+
+                    <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+                </div>
+                <!-- /reviews__item -->
+
+                <!-- reviews__item -->
+                <div class="reviews__item">
+
+                    <!-- reviews__item-title -->
+                    <a class="reviews__item-title" href="#">3D - коррекция лица филлерами</a>
+                    <!-- /reviews__item-title -->
+
+                    <!-- reviews__item-user -->
+                    <div class="reviews__item-user">Василиса Константинова  • <time datetime="2016-02-14">14.02.16</time></div>
+                    <!-- /reviews__item-user -->
+
+                    <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+                </div>
+                <!-- /reviews__item -->
+
+            </div>
+            <!-- /reviews -->
+
+            <!-- news -->
+            <div class="news">
+
+                <!-- site__title -->
+                <h2 class="site__title">новости
+                    <a class="reviews__all" href="#">Все новости</a>
+                </h2>
+                <!-- /site__title -->
+
+                <!-- /news__wrap -->
+                <div class="news__wrap">
+
+                    <!-- news__item -->
+                    <div class="news__item mobile_show">
+
+                        <!-- news__pic -->
+                        <div class="news__pic" style="background-image: url(pic/news01.jpg)"></div>
+                        <!-- /news__pic -->
+
+                        <time datetime="2016-02-14">14.02.16</time>
+
+                        <!-- news__title -->
+                        <a href="#" class="news__title">Повседневная практика показывает</a>
+                        <!-- /news__title -->
+
+                        <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+
+                    </div>
+                    <!-- /news__item -->
+
+                    <!-- news__item -->
+                    <div class="news__item">
+
+                        <!-- news__pic -->
+                        <div class="news__pic" style="background-image: url(pic/news02.jpg)"></div>
+                        <!-- /news__pic -->
+
+                        <time datetime="2016-02-14">14.02.16</time>
+
+                        <!-- news__title -->
+                        <a href="#" class="news__title">Повседневная практика показывает</a>
+                        <!-- /news__title -->
+
+                        <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+
+                    </div>
+                    <!-- /news__item -->
+
+                    <!-- news__item -->
+                    <div class="news__item">
+
+                        <!-- news__pic -->
+                        <div class="news__pic" style="background-image: url(pic/news03.jpg)"></div>
+                        <!-- /news__pic -->
+
+                        <time datetime="2016-02-14">14.02.16</time>
+
+                        <!-- news__title -->
+                        <a href="#" class="news__title">Повседневная практика показывает</a>
+                        <!-- /news__title -->
+
+                        <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+
+                    </div>
+                    <!-- /news__item -->
+
+                </div>
+                <!-- /news__wrap -->
+
+            </div>
+            <!-- /news -->
 
         </div>
-        <!-- /popup__wrap -->
+        <!-- /site__content-layout -->
 
-    </div>
-    <!-- /popup -->
+    </div><!-- /site__content -->
 
+    <footer class="site__footer">
 
-    <script src="js/vendors/jquery-2.2.1.min.js"></script>
-    <script src="js/index.min.js"></script>
+        <div class="site__footer-layout">
+
+        </div><!-- /site__footer-layout -->
+
+    </footer><!-- /site__footer -->
+
+</div><!-- /site -->
+
+<script src="js/vendors/jquery-2.2.1.min.js"></script>
+<script src="js/vendors/swiper.jquery.min.js"></script>
+<script src="js/jquery.main.js"></script>
+
 </body>
 </html>
