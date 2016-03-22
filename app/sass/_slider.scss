@@ -1,0 +1,87 @@
+.slider{
+  position: relative;
+  max-width: 720px;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  .slider__layout{
+    position: relative;
+    width: 100%;
+    height: 296px;
+    background-position: 30% 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+    .slider__title{
+      padding: 26px 12px 0 50%;
+
+      & h2{
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #fff;
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+      & span{
+        font-size: 14px;
+      }
+    }
+  &__more{
+    display: inline-block;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+
+    &:after{
+      position: absolute;
+      right: -20px;
+      width: 13px;
+      height: 24px;
+      background: url("../img/more-right.png");
+      content: "";
+    }
+  }
+
+  &__icon{
+    position: relative;
+    max-width: 698px;
+    margin: 0 auto;
+    bottom: 35px;
+    text-align: center;
+}
+  .swiper-pagination-clickable span {
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    background: #c5d4e5;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 7px;
+    opacity: 1;
+    transition: background .3s ease, border .3s ease;
+
+}
+  .swiper-pagination-clickable span:hover {
+    background: #d3ddea;
+}
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #d3ddea !important;
+}
+}
+@media (min-width: $tablet-landscape) {
+
+
+}
+
+@media (min-width: $desktop) {
+
+
+}

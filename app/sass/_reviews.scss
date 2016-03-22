@@ -1,0 +1,29 @@
+.reviews__all{
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5286bf;
+  text-transform: none;
+  text-decoration: underline;
+
+  &:hover{
+    text-decoration: none;
+  }
+  &__item{
+    margin-bottom: 20px;
+  }
+  &__item-user{
+    margin-bottom: 10px;
+    color: #b6b6b6;
+  }
+  &__item-title{
+    display: block;
+    vertical-align: top;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #707070;
+    text-decoration: underline;
+
+  }
+}
