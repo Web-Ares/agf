@@ -144,6 +144,37 @@
         display: block;
       }
   }
+    &__location{
+      padding: 10px 10px;
+
+      &-town, &-mail{
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        color: #707070;
+        text-decoration: underline;
+
+      &:before{
+          position: absolute;
+          width: 12px;
+          height: 16px;
+          left: 0;
+          background: url("../img/location01.png");
+          background-size: contain;
+          content: "";
+      }
+      }
+      &-mail{
+        margin-top: 5px;
+
+        &:before{
+          width: 16px;
+          height: 10px;
+          background: url("../img/location02.png");
+          background-size: contain;
+        }
+      }
+    }
 }
 
 @media (min-width: $phone-landscape) {

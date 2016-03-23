@@ -4,7 +4,7 @@
   overflow: hidden;
   margin-bottom: 30px;
 
-  .slider__layout{
+  &__layout{
     position: relative;
     width: 100%;
     height: 296px;
@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     color: #fff;
   }
-    .slider__title{
+    &__title{
       padding: 26px 12px 0 50%;
 
       & h2{
@@ -52,10 +52,10 @@
     position: relative;
     max-width: 698px;
     margin: 0 auto;
-    bottom: 35px;
+    bottom: 35px !important;
     text-align: center;
-}
-  .swiper-pagination-clickable span {
+
+   span {
     display: inline-block;
     vertical-align: middle;
     content: '';
@@ -67,21 +67,17 @@
     opacity: 1;
     transition: background .3s ease, border .3s ease;
 
-}
-  .swiper-pagination-clickable span:hover {
-    background: #d3ddea;
-}
-  .swiper-pagination-bullet-active {
+      &:hover {
+        background: #d3ddea;
+      }
+    }
+  }
+   .swiper-pagination-bullet-active {
     opacity: 1;
     background: #d3ddea !important;
+  }
 }
-}
+
 @media (min-width: $tablet-landscape) {
-
-
-}
-
-@media (min-width: $desktop) {
-
 
 }
