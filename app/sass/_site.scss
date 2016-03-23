@@ -3,6 +3,7 @@
     overflow: hidden;
     min-height: 100%;
     min-width: 320px;
+    margin: 0 auto;
     font: 14px/18px 'Open Sans', sans-serif;
     font-weight: 600;
     color:#707070;
@@ -60,14 +61,13 @@
     &__tabs{
       height: 86px;
       background: #8bccec;
-      font-family: 'Open Sans SamiBold', 'sans-serif';
 
       & .plastic,
       & .maxillofacial,
       & .stomatology{
         display: block;
         vertical-align: top;
-        padding: 5px 0;
+        padding: 4px 0;
         font-size: 13px;
         color: #fff;
         text-align: center;
@@ -86,12 +86,12 @@
       }
     }
     &__header-work-time{
-    position: absolute;
-    top: 13px;
-    right: 26px;
-    font-size: 13px;
-    color: #707070;
-    line-height: 20px;
+      position: absolute;
+      top: 16px;
+      right: 39px;
+      font-size: 13px;
+      color: #707070;
+      line-height: 18px;
   }
     &__header-work-time span{
     display: block;
@@ -189,9 +189,14 @@
 
   }
 }
+
 @media (min-width: $tablet-landscape) {
   .site {
-
+    &__content {
+      width: 992px;
+      margin: 0 auto;
+      padding: 0 26px;
+    }
   }
 }
 @media (min-width: $desktop) {
