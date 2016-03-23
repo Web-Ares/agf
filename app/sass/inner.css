@@ -2,23 +2,23 @@
 Syntax error: Invalid CSS after "    &": expected "{", was "__content {"
               
               "__content" may only be used at the beginning of a compound selector.
-        on line 18 of _site.scss
+        on line 19 of _site.scss
         from line 2 of inner.scss
 
-13:       display: block;
-14:       clear: both;
-15:       width: 100%;
-16:       height: 57px;
-17:     }
-18:     &__content {
-19:       position: relative;
-20:       z-index: 2;
-21:   }
-22:     &__header {
-23:       position: relative;
+14:       display: block;
+15:       clear: both;
+16:       width: 100%;
+17:       height: 57px;
+18:     }
+19:     &__content {
+20:       position: relative;
+21:       z-index: 2;
+22:   }
+23:     &__header {
+24:       position: relative;
 
 Backtrace:
-_site.scss:18
+_site.scss:19
 inner.scss:2
 C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1147:in `expected'
 C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1085:in `expected'
@@ -77,4 +77,4 @@ C:/RailsInstaller/Ruby2.1.0/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"    &\": expected \"{\", was \"__content {\"\A               \A               \"__content\" may only be used at the beginning of a compound selector.\A         on line 18 of _site.scss\A         from line 2 of inner.scss\A \A 13:       display: block;\A 14:       clear: both;\A 15:       width: 100%;\A 16:       height: 57px;\A 17:     }\A 18:     &__content {\A 19:       position: relative;\A 20:       z-index: 2;\A 21:   }\A 22:     &__header {\A 23:       position: relative;"; }
+  content: "Syntax error: Invalid CSS after \"    &\": expected \"{\", was \"__content {\"\A               \A               \"__content\" may only be used at the beginning of a compound selector.\A         on line 19 of _site.scss\A         from line 2 of inner.scss\A \A 14:       display: block;\A 15:       clear: both;\A 16:       width: 100%;\A 17:       height: 57px;\A 18:     }\A 19:     &__content {\A 20:       position: relative;\A 21:       z-index: 2;\A 22:   }\A 23:     &__header {\A 24:       position: relative;"; }
