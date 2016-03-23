@@ -1,0 +1,13 @@
+.logo {
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+@media (min-width: $tablet-landscape) {
+  .logo {
+    top: 38px;
+  }
+}
