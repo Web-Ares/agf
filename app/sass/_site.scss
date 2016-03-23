@@ -156,6 +156,7 @@
 
       &:before{
           position: absolute;
+          top: 2px;
           width: 12px;
           height: 16px;
           left: 0;
@@ -168,6 +169,7 @@
         margin-top: 5px;
 
         &:before{
+          top: 5px;
           width: 16px;
           height: 10px;
           background: url("../img/location02.png");
