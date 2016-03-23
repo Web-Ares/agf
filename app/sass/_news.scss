@@ -29,3 +29,24 @@
 .mobile_show{
   display: block;
 }
+
+@media (min-width: $tablet-portrait) {
+  .news__wrap{
+    text-align: justify;
+
+    &:after{
+      display: inline-block;
+      width: 100%;
+      content: "";
+    }
+  }
+  .news__item{
+    width: 31%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+  }
+  .news__pic{
+    height: 140px;
+  }
+}
