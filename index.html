@@ -8,6 +8,7 @@
     <meta name="format-detection" content="address=no">
 
     <title>Title</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -36,7 +37,7 @@
 
     <header class="site__header">
 
-        <h1 class="logo"><img src="img/logo.png" width="" height="" alt="Logo"></h1><!-- /logo -->
+        <h1 class="logo"><img src="img/logo.png" width="" height="" alt=""></h1><!-- /logo -->
 
         <!-- menu -->
         <nav class="header__menu">
@@ -157,7 +158,7 @@
 
                         <!-- swiper-slide -->
                         <div class="swiper-slide">
-                            <div class="slider__layout" style="background-image: url('pic/main-slider.jpg')">
+                            <div class="slider__layout" style="background-image: url(pic/main-slider.jpg)">
                                 <div class="slider__title">
                                     <h2>улучшение
                                         контура лица</h2>
@@ -169,7 +170,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <div class="slider__layout" style="background-image: url('pic/main-slider.jpg')">
+                            <div class="slider__layout" style="background-image: url(pic/main-slider.jpg)">
                                 <div class="slider__title">
                                     <h2>улучшение
                                         контура лица</h2>
@@ -192,8 +193,11 @@
             </div>
             <!-- slider -->
 
-            <!-- plastic surgery -->
-            <div class="plastic-surgery">
+            <!-- site__content-wrap -->
+            <div class="site__content-wrap">
+
+                <!-- plastic surgery -->
+                <div class="plastic-surgery">
 
                 <!-- site__title -->
                 <h2 class="site__title">пластическая хирургия
@@ -209,106 +213,109 @@
                     <li>Задача организации, в особенности же рамки и место обучения кадров представляет собой.</li>
                 </ul>
 
-            </div>
-            <!-- /plastic surgery -->
+                </div>
+                <!-- /plastic surgery -->
 
-            <!-- photo -->
-            <div class="photo">
+                <!-- photo -->
+                <div class="photo">
 
-                <!-- site__title -->
-                <h2 class="site__title">фото «до и после»
-                    <a class="reviews__all" href="#">Все фотографии</a>
-                </h2>
-                <!-- /site__title -->
+                    <!-- site__title -->
+                    <h2 class="site__title">фото «до и после»
+                        <a class="reviews__all" href="#">Все фотографии</a>
+                    </h2>
+                    <!-- /site__title -->
 
-                <!-- slider -->
-                <div class="photo__slider">
+                    <!-- slider -->
+                    <div class="photo__slider">
 
-                    <!-- Swiper -->
-                    <div class="swiper-container photo__wrap">
+                        <!-- Swiper -->
+                        <div class="swiper-container photo__wrap">
 
-                        <div class="swiper-wrapper">
+                            <div class="swiper-wrapper">
 
-                            <!-- swiper-slide -->
-                            <div class="swiper-slide">
-                                <div class="photo__item" style="background-image: url(pic/photo-pic01.jpg)">
-                                    <span>До</span>
+                                <!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="photo__item" style="background-image: url(pic/photo-pic01.jpg)">
+                                        <span>До</span>
+                                    </div>
+                                    <div class="photo__item" style="background-image: url(pic/photo-pic02.jpg)">
+                                        <span>После</span>
+                                    </div>
                                 </div>
-                                <div class="photo__item" style="background-image: url(pic/photo-pic02.jpg)">
-                                    <span>После</span>
+
+                                <div class="swiper-slide">
+                                    <div class="photo__item" style="background-image: url(pic/photo-pic01.jpg)">
+                                        <span>До</span>
+                                    </div>
+                                    <div class="photo__item" style="background-image: url(pic/photo-pic02.jpg)">
+                                        <span>После</span>
+                                    </div>
                                 </div>
+
                             </div>
-
-                            <div class="swiper-slide">
-                                <div class="photo__item" style="background-image: url(pic/photo-pic01.jpg)">
-                                    <span>До</span>
-                                </div>
-                                <div class="photo__item" style="background-image: url(pic/photo-pic02.jpg)">
-                                    <span>После</span>
-                                </div>
-                            </div>
+                            <!-- /Swiper -->
 
                         </div>
-                        <!-- /Swiper -->
+
+                        <!-- swiper-button-next -->
+                        <div class="photo-button-next"></div>
+                        <!-- /swiper-button-next -->
+
+                        <!-- swiper-button-prev -->
+                        <div class="photo-button-prev"></div>
+                        <!-- /swiper-button-prev -->
 
                     </div>
+                    <!-- slider -->
 
-                    <!-- swiper-button-next -->
-                    <div class="photo-button-next"></div>
-                    <!-- /swiper-button-next -->
-
-                    <!-- swiper-button-prev -->
-                    <div class="photo-button-prev"></div>
-                    <!-- /swiper-button-prev -->
 
                 </div>
-                <!-- slider -->
+                <!-- /photo -->
 
+                <!-- reviews -->
+                <div class="reviews">
 
-            </div>
-            <!-- /photo -->
-
-            <!-- reviews -->
-            <div class="reviews">
-
-                <!-- site__title -->
-                <h2 class="site__title">отзывы
-                    <a class="reviews__all" href="#">Все отзывы</a>
-                </h2>
-                <!-- /site__title -->
-
-                <!-- reviews__item -->
-                <div class="reviews__item">
+                    <!-- site__title -->
+                    <h2 class="site__title">отзывы
+                        <a class="reviews__all" href="#">Все отзывы</a>
+                    </h2>
+                    <!-- /site__title -->
 
                     <!-- reviews__item -->
-                    <a class="reviews__item-title" href="#">Увеличение груди</a>
+                    <div class="reviews__item">
+
+                        <!-- reviews__item -->
+                        <a class="reviews__item-title" href="#">Увеличение груди</a>
+                        <!-- /reviews__item -->
+
+                        <!-- reviews__item-user -->
+                        <div class="reviews__item-user">Марина Петрова  • <time datetime="2016-02-14">14.02.16</time></div>
+                        <!-- /reviews__item-user -->
+
+                        <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+                    </div>
                     <!-- /reviews__item -->
 
-                    <!-- reviews__item-user -->
-                    <div class="reviews__item-user">Марина Петрова  • <time datetime="2016-02-14">14.02.16</time></div>
-                    <!-- /reviews__item-user -->
+                    <!-- reviews__item -->
+                    <div class="reviews__item">
 
-                    <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+                        <!-- reviews__item-title -->
+                        <a class="reviews__item-title" href="#">3D - коррекция лица филлерами</a>
+                        <!-- /reviews__item-title -->
+
+                        <!-- reviews__item-user -->
+                        <div class="reviews__item-user">Василиса Константинова  • <time datetime="2016-02-14">14.02.16</time></div>
+                        <!-- /reviews__item-user -->
+
+                        <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
+                    </div>
+                    <!-- /reviews__item -->
+
                 </div>
-                <!-- /reviews__item -->
-
-                <!-- reviews__item -->
-                <div class="reviews__item">
-
-                    <!-- reviews__item-title -->
-                    <a class="reviews__item-title" href="#">3D - коррекция лица филлерами</a>
-                    <!-- /reviews__item-title -->
-
-                    <!-- reviews__item-user -->
-                    <div class="reviews__item-user">Василиса Константинова  • <time datetime="2016-02-14">14.02.16</time></div>
-                    <!-- /reviews__item-user -->
-
-                    <p>Намеченных плановых заданий требуют определения и уточнения позиций, занимаемых намеченных плановых заданий требуют определения и уточнения позиций, занимаемых</p>
-                </div>
-                <!-- /reviews__item -->
+                <!-- /reviews -->
 
             </div>
-            <!-- /reviews -->
+            <!-- site__content-wrap -->
 
             <!-- news -->
             <div class="news">
@@ -385,8 +392,7 @@
         </div>
         <!-- /site__content-layout -->
 
-    </div>
-    <!-- /site__content -->
+    </div><!-- /site__content -->
 
     <!-- site__location -->
     <address class="site__location">
@@ -410,14 +416,15 @@
 
         </div>
         <!-- /site__footer-layout -->
+
     </footer>
     <!-- /site__footer -->
 
 </div><!-- /site -->
 
-<script src="js/vendors/jquery-2.2.1.min.js"></script>
-<script src="js/vendors/swiper.jquery.min.js"></script>
-<script src="js/index.min.js"></script>
+<script src="js/jquery-2.2.1.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/jquery.main.js"></script>
 
 </body>
 </html>

@@ -4,18 +4,12 @@
     $( function(){
 
         $('.aside-menu__wrap').each(function() {
-            Menu( $( this ) );
+            Menu($(this));
         });
 
         $('.swiper-container').each(function () {
-            Slider( $( this ) );
+            Slider($(this));
         });
-
-        /*$.each( $( '.header__menu' ), function() {
-
-            new MainMenu ( $( this ) );
-
-        } );*/
 
         $('.header__menu-btn').on({
             'click':function(){
@@ -43,7 +37,6 @@
             }
         });
     });
-
     var Menu = function(obj) {
 
         //private properties
@@ -74,7 +67,6 @@
                     }
                 });
 
-
                 $('body').on({
 
                     click: function(e){
@@ -104,62 +96,6 @@
         _init();
     };
 
-   /* var MainMenu = function( obj ) {
-
-        //private properties
-        var _self = this,
-            _menu = obj,
-            _window = $( window ),
-            _showBtn = $( '.aside-menu__btn' );
-
-        //private methods
-        var _addEvents = function() {
-
-                _showBtn.on( {
-                    click: function() {
-
-                        _openMenu( $( this ) );
-
-                    }
-                } );
-
-                _window.on( {
-                    resize: function () {
-
-                        _resetStyle();
-
-                    }
-                } );
-
-            },
-            _init = function() {
-                _menu[ 0 ].obj = _self;
-                _addEvents();
-            },
-            _openMenu = function( elem )  {
-
-                var curItem = elem;
-
-                if( curItem.hasClass( 'opened' ) ) {
-
-                    curItem.removeClass( 'opened' );
-
-                } else {
-
-                    curItem.addClass( 'opened' );
-                }
-
-            },
-            _resetStyle = function() {
-
-                _showBtn.removeClass( 'opened' );
-                //_menu.removeAttr( 'style' );
-
-            };
-
-        _init();
-    };*/
-
     var Slider = function (obj) {
 
         //private properties
@@ -186,7 +122,6 @@
                 paginationClickable: true
             });
         }
-
         if (_obj.hasClass('photo__wrap')) {
             var _swiper = new Swiper(_obj, {
                 nextButton: _next,
@@ -207,3 +142,4 @@
     };
 
 } )();
+
