@@ -62,12 +62,13 @@
     right: 0;
     bottom: 0;
     height: 57px;
+    background: #6684aa url("../pic/fotter-bg.jpg") no-repeat center;
+
 }
 .site__footer-layout {
     width: 100%;
     height: 57px;
     padding: 10px 10px;
-    background: #6684aa url("../img/footer-bg.png") no-repeat center;
     color: #fff;
     font-weight: 400;
 }
@@ -304,6 +305,9 @@
 .site__aside{
     margin-bottom: 34px;
 }
+.site__aside .reviews{
+   display: none;
+}
 .aside-menu {
     position: relative;
     font: 13px 'Open Sans', sans-serif;
@@ -382,7 +386,7 @@
     z-index: 2;
     top: 66px;
     width: 230px;
-    margin-left: -230px;
+    margin-left: -243px;
     background: #fff;
     color: #707070;
     text-align: left;
@@ -392,7 +396,7 @@
 
 }
 .aside-menu.active .aside-menu__wrap {
-    margin-left: 0;
+    margin-left: -13px;
 }
 .aside-menu__wrap a:hover {
     color:#2d4b9b;
@@ -449,6 +453,7 @@
     position: relative;
     width: 100%;
     height: 296px;
+    border-radius: 5px;
     background-position: 30% 50%;
     background-repeat: no-repeat;
     color: #fff;
@@ -711,7 +716,6 @@
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
 }
-
 .logo img{
     width: 300px;
     height: auto;
@@ -722,6 +726,7 @@
 
     .site__content-layout{
         padding: 0 24px;
+        margin: 0 auto;
     }
     .site__tabs{
         height: 26px;
@@ -773,6 +778,7 @@
     }
     .site__location {
         position: absolute;
+        z-index: 3;
         top: 46px;
         right: 0;
     }
@@ -782,8 +788,26 @@
     .site__location-mail {
         margin-left: 10px;
     }
+    .site__footer-layout{
+        padding: 20px 160px 0 0;
+        text-align: justify;
+    }
+    .site__footer-layout:after{
+        display: inline-block;
+        width: 100%;
+        content: "";
+    }
+    .site__footer-copywriter {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .site__footer-developer {
+        display: inline-block;
+        vertical-align: top;
+    }
     /* --------------- slider --------------- */
     .slider{
+        order: 1;
         margin: 84px auto 0;
     }
     /* --------------- /slider --------------- */
@@ -807,25 +831,25 @@
     .aside-menu__btn {
         position: absolute;
         z-index: 1;
-        top: -82px;
-        left: 24px;
+        top: -36px;
+        left: 0px;
         width: 141px;
     }
     .aside-menu__wrap {
-        top: -26px;
+        top: 25px;
     }
     /* --------------- /site__aside --------------- */
 
     /* --------------- reviews --------------- */
     .reviews{
-        order: 1;
+        order: 2;
         width: 213px;
     }
     /* --------------- /reviews --------------- */
 
-    /* --------------- plastic-surgery --------------- */
+    /* --------------- plastic-surgery--------------- */
     .plastic-surgery{
-        order: 2;
+        order: 3;
         width: 472px;
     }
     /* --------------- /plastic-surgery --------------- */
@@ -852,7 +876,7 @@
 
     /* --------------- photo --------------- */
     .photo{
-        order: 3;
+        order: 4;
         width: 100%;
     }
     .photo .site__title{
@@ -904,37 +928,152 @@
     /* --------------- /logo --------------- */
 }
 
-@media (min-width: 1024px) {
-
-    /* --------------- menu --------------- */
-    .header__menu {
-        top: 100px;
+@media (min-width: 940px) {
+    .site__header {
+        position: relative;
+        max-width: 100%;
+        height: 210px;
     }
+    .site__header-tel {
+        top: 23px;
+        left: 50%;
+        right: auto;
+        width: 190px;
+        margin-left: 274px;
+    }
+    .site__header-work-time {
+        width: 300px;
+        top: 23px;
+        right: 50%;
+        left: auto;
+        margin-right: 163px;
+    }
+    .site__location {
+        width: 300px;
+        top: 107px;
+        right: 50%;
+        margin-right: 178px;
+    }
+    .site__location-mail {
+        margin-left: 0;
+    }
+    .site__content-layout{
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        align-items: flex-start;
+        -webkit-flex-align: flex-start;
+        -ms-flex-align: flex-start;
+        -webkit-align-items: flex-start;
+        max-width: 940px;
+        padding: 0;
+    }
+    .site__aside{
+        width: 220px;
+        margin-bottom: 0;
+    }
+    .site__aside .reviews{
+        display: block;
+    }
+    .aside-menu__btn{
+        display: none;
+    }
+    .aside-menu__wrap{
+        position: relative;
+        top: 30px;
+        margin: 0;
+        border-radius: 5px;
+        background: #f3f3f3;
+    }
+    .aside-menu {
+        margin-bottom: 49px;
+    }
+    .site__content-wrap{
+        display: block;
+        width: 698px;
+    }
+    .site__footer-layout{
+        max-width: 940px;
+        margin: 0 auto;
+    }
+    .site__footer-layout {
+        padding-right: 0;
+    }
+    /* --------------- menu --------------- */
+
+    .header__menu {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 35px;
+        background: #a2d6f0;
+        background: -webkit-linear-gradient(top, #a2d6f0 0%,#3765a9 50%);
+        background: -o-linear-gradient(top, #a2d6f0 0%,#3765a9 50%);
+        background: linear-gradient(top, #a2d6f0 0%,#3765a9 50%);
+    }
+
     .header__menu-btn {
         display: none;
     }
     .header__menu-wrap {
-        left: auto;
-        top: 37px;
-        background: transparent;
-        width: 852px;
-        text-align: justify;
         position: relative;
+        width: 940px;
+        margin: 0 auto;
+        top: 0;
         border: none;
+        background: transparent;
+        text-align: justify;
+
     }
     .header__menu a {
         display: inline-block;
         vertical-align: top;
-        padding: 0;
+        height: 35px;
+        padding: 7px 20px;
         border: none;
+        color: #fff;
+        transition: background .3s ease;
+        -webkit-transition: background .3s ease;
+    }
+    .header__menu a:hover{
+        background: #78b5dd;
+        color: #fff;
+        text-decoration: none;
     }
     .header__menu-wrap:after {
         content: '';
         display: inline-block;
         width: 100%;
     }
-    .header__menu a {
-        text-decoration: underline;
+    /* --------------- /menu --------------- */
+
+    /* --------------- /menu --------------- */
+    .slider {
+        width: 698px;
+        margin-top: 30px;
+    }
+    /* --------------- /menu --------------- */
+
+    /* --------------- plastic-surgery --------------- */
+    .plastic-surgery {
+        width: 100%;
+    }
+    /* --------------- /plastic-surgery --------------- */
+
+    /* --------------- reviews --------------- */
+   .reviews{
+        display: none;
+        width: 100%;
+    }
+    /* --------------- /reviews --------------- */
+
+    /* --------------- /menu --------------- */
+    .logo {
+        top: 19px;
     }
     /* --------------- /menu --------------- */
 }
