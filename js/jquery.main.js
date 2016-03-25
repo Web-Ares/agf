@@ -3,6 +3,10 @@
 
     $( function(){
 
+        $('.catalog').each(function () {
+            Catalog($(this));
+        });
+
         $('.aside-menu__wrap').each(function() {
             Menu($(this));
         });
@@ -37,6 +41,65 @@
             }
         });
     });
+
+    var Catalog = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _btn = _obj.find( '.catalog__hider' ),
+            _content = _btn.next( '.catalog__hider');
+
+
+        //private methods
+        var _addEvents = function() {
+
+                _btn.on({
+                    click: function(){
+                        var curElem = $(this),
+                            curContent = curElem.next( '.catalog__content' );
+
+                        if( curContent.is( ':visible' ) ){
+                            curContent.slideUp(300);
+                        } else {
+                            curContent.slideDown(300);
+                        }
+                        if ( event.stopPropagation ) {
+                            event.stopPropagation();
+                        } else {
+                            event.cancelBubble = true;
+                        }
+                    }
+                });
+
+                $('body').on({
+
+                    click: function(e){
+
+                        var elem=$(e.target);
+
+                        var curElem = $('.aside-menu__wrap>li'),
+                            curMenu= curElem.find('ul');
+
+                        if(curMenu.is(':visible')){
+                            curMenu.slideUp(300);
+                        }
+                    }
+                });
+
+            },
+            _init = function() {
+
+
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
     var Menu = function(obj) {
 
         //private properties
