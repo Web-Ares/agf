@@ -55,9 +55,11 @@
 
                         if(curMenu.is(':visible')){
                             curMenu.slideUp(300);
+                            curElem.removeClass('open');
                         }
                         else{
                             curMenu.slideDown(300);
+                            curElem.addClass('open');
                         }
                         if (event.stopPropagation) {
                             event.stopPropagation();
@@ -78,6 +80,7 @@
 
                         if(curMenu.is(':visible')){
                             curMenu.slideUp(300);
+                            curElem.removeClass('open');
                         }
                     }
                 });
@@ -103,6 +106,8 @@
             _paginator = obj.find($('.slider__icon')),
             _next = $('.photo-button-next'),
             _prev = $('.photo-button-prev'),
+            _nextSpecialist = $('.specialist-button-next'),
+            _prevSpecialist = $('.specialist-button-prev'),
             _obj = obj;
 
         //private methods
@@ -115,7 +120,7 @@
         if (_obj.hasClass('slider__wrap')) {
             var _swiperPromo = new Swiper(_obj, {
                 slidesPerView: 1,
-                autoplay: 15000,
+                autoplay: 10000,
                 speed: 1000,
                 pagination: _paginator,
                 loop: true,
@@ -127,9 +132,25 @@
                 nextButton: _next,
                 prevButton: _prev,
                 slidesPerView: 1,
-                autoplay:1500,
-                speed: 1000,
+                autoplay:5000,
+                speed: 2000,
                 loop: true
+            });
+
+        }
+        if (_obj.hasClass('specialist__slider')) {
+            var _specialist = new Swiper(_obj, {
+                nextButton: _nextSpecialist,
+                prevButton: _prevSpecialist,
+                slidesPerView: 4,
+                autoplay:5000,
+                speed: 1000,
+                loop: true,
+                breakpoints: {
+                    940: {
+                        slidesPerView: 3
+                    }
+                }
             });
 
         }

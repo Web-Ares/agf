@@ -110,9 +110,6 @@
     color: #707070;
     line-height: 18px;
 }
-.site__header-work-time span{
-    display: block;
-}
 .site__header-tel{
     position: absolute;
     z-index: 1;
@@ -314,6 +311,9 @@
     font-weight: 600;
     text-align: center;
 }
+.aside-menu__title {
+    display: none;
+}
 .aside-menu.active .aside-menu__btn > span {
     background: transparent;
 }
@@ -386,7 +386,7 @@
     z-index: 2;
     top: 66px;
     width: 230px;
-    margin-left: -243px;
+    margin-left: -250px;
     background: #fff;
     color: #707070;
     text-align: left;
@@ -396,7 +396,7 @@
 
 }
 .aside-menu.active .aside-menu__wrap {
-    margin-left: -13px;
+    margin-left: 0;
 }
 .aside-menu__wrap a:hover {
     color:#2d4b9b;
@@ -410,9 +410,9 @@
     font-size: 14px;
     line-height: 18px;
     text-decoration: underline;
-
 }
 .aside-menu__wrap>li{
+    position: relative;
     padding: 0;
     line-height: 24px;
     margin-bottom: 0;
@@ -420,12 +420,34 @@
     -webkit-transition: color .3s ease;
     cursor: pointer;
 }
-.aside-menu__wrap>li a:hover, .aside-menu__wrap>li span:hover{
+.aside-menu__wrap>li:before{
+    position: absolute;
+    top: 17px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    border-color: rgba(163, 163, 163, 0);
+    border-top-color: #b4b4b4;
+    border-width: 6px 6px 0 6px;
+    left: 4px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.aside-menu__wrap>li.open:before{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+.aside-menu__wrap>li.open span{
     color: #5286bf;
     text-decoration: none;
 }
-.aside-menu__wrap li:before{
-    content: none;
+.aside-menu__wrap>li a:hover, .aside-menu__wrap>li span:hover{
+    color: #5286bf;
+    text-decoration: none;
 }
 .aside-menu__wrap ul{
     display: none;
@@ -708,6 +730,18 @@
 }
 /* --------------- /news --------------- */
 
+/* --------------- specialist --------------- */
+.specialist{
+    display: none;
+}
+/* --------------- /specialist --------------- */
+
+/* --------------- site__information --------------- */
+.site__information{
+    display: none;
+}
+/* --------------- /site__information --------------- */
+
 /* --------------- logo --------------- */
 .logo {
     position: absolute;
@@ -720,6 +754,9 @@
     width: 300px;
     height: auto;
 }
+.logo span{
+    display: none;
+}
 /* --------------- /logo --------------- */
 
 @media (min-width: 768px){
@@ -731,6 +768,8 @@
     .site__tabs{
         height: 26px;
         text-align: center;
+        box-shadow: 0 0 70px rgba(139, 204, 236, 0.65);
+        -webkit-box-shadow: 0 0 70px rgba(139, 204, 236, 0.65);
     }
     .site__tabs .plastic,
     .site__tabs .maxillofacial,
@@ -760,9 +799,17 @@
         left: 24px;
     }
     .site__header-work-time {
+        width: 164px;
         top: 34px;
         right: auto;
         left: 170px;
+    }
+    .site__header-work-time div{
+        position: relative;
+    }
+    .site__header-work-time span{
+        position: absolute;
+        right: 0;
     }
     .site__header-tel {
         top: 89px;
@@ -789,7 +836,7 @@
         margin-left: 10px;
     }
     .site__footer-layout{
-        padding: 20px 160px 0 0;
+        padding: 20px 160px 0 13px;
         text-align: justify;
     }
     .site__footer-layout:after{
@@ -808,7 +855,7 @@
     /* --------------- slider --------------- */
     .slider{
         order: 1;
-        margin: 84px auto 0;
+        margin: 50px auto 0;
     }
     /* --------------- /slider --------------- */
 
@@ -855,6 +902,9 @@
     /* --------------- /plastic-surgery --------------- */
 
     /* --------------- news --------------- */
+    .news {
+        margin-bottom: 38px;
+    }
     .news__wrap{
         text-align: justify;
     }
@@ -863,14 +913,21 @@
         width: 100%;
         content: "";
     }
+    .news .site__title {
+        margin-bottom: 23px;
+    }
     .news__item{
-        width: 31%;
+        width: 30.5%;
         display: inline-block;
         vertical-align: top;
         text-align: left;
     }
     .news__pic{
         height: 140px;
+        margin-bottom: 24px;
+    }
+    .news__title {
+        letter-spacing: -0.1px;
     }
     /* --------------- /news --------------- */
 
@@ -880,7 +937,7 @@
         width: 100%;
     }
     .photo .site__title{
-        margin-bottom: 10px;
+        margin-bottom: 14px;
     }
     .photo .reviews__all{
         top: auto;
@@ -889,13 +946,14 @@
     }
     .photo__slider {
         height: 222px;
-        padding: 31px 0 31px 13px;
-        margin: 0 -13px 20px;
+        padding: 32px 78px;
+        margin: 0 0 38px 0;
         text-align: center;
     }
     .photo__item {
         display: inline-block;
         vertical-align: top;
+        width: 259px;
         margin: 0 5px;
     }
     .photo-button-next, .photo-button-prev {
@@ -910,20 +968,199 @@
         right: auto;
     }
     .photo__wrap {
-        width: 570px;
+        width: 100%;
         margin: 0 auto;
     }
 
     /* --------------- /photo --------------- */
 
+    /* --------------- specialist --------------- */
+    .specialist{
+        display: block;
+        position: relative;
+        width: 100%;
+        margin-bottom: 60px;
+        padding: 15px 0 77px;
+        border-radius: 5px;
+        background: #25b2f0 url(../pic/specialist-bg.png) no-repeat center;
+    }
+    .specialist .site__title{
+        margin: 0 0 22px 24px;
+        padding-bottom: 16px;
+        border-color: #568fbd;
+        color: #fff;
+    }
+    .specialist__slider{
+        margin: 0 24px;
+        text-align: center;
+    }
+    .specialist__item{
+        display: inline-block;
+        vertical-align: top;
+        width: 205px;
+        color: #fff;
+        letter-spacing: .3px;
+        text-align: center;
+    }
+    .specialist__pic{
+        width: 100%;
+        height: 241px;
+        margin-bottom: 17px;
+        background: no-repeat center;
+    }
+    .specialist__name{
+        margin-bottom: 4px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+    .specialist__surname{
+        margin-bottom: 6px;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+    .specialist__position{
+        font-style: italic;
+    }
+    .specialist-button-next,
+    .specialist-button-prev {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        right: auto;
+        width: 50px;
+        height: 50px;
+        margin: 0 0 0 -58px;
+        border-radius: 50%;
+        background: #e5e5e5 url("../pic/slider-prevt.png") no-repeat center;
+        background-size: 13px 24px;
+        box-shadow: 0 0 3px #B7B1B1;
+        cursor: pointer;
+        transition: background-color .3s ease;
+        -webkit-transition: background-color .3s ease;
+    }
+    .specialist-button-next{
+        right: auto;
+        margin: 0 0 0 6px;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    .specialist-button-prev:hover,
+    .specialist-button-next:hover{
+        background: #4474b3 url("../pic/slider-next.png") no-repeat center;
+        background-size: 13px 24px;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    .specialist-button-prev:hover{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    /* --------------- /specialist --------------- */
+
+    /* --------------- site__information --------------- */
+    .site__information{
+        display: block;
+        height: 212px;
+        padding: 40px 0;
+        background: #e6eeeb;
+    }
+    .site__information-wrap{
+        position: relative;
+        max-width: 940px;
+        margin: 0 auto;
+    }
+    .site__information a{
+        color: #707070;
+        text-decoration: underline;
+        transition: text-decoration .3s ease;
+    }
+    .site__information a:hover{
+        text-decoration: none;
+    }
+    .site__information-logo{
+        position: relative;
+        width: 367px;
+        margin-bottom: 40px;
+    }
+    .site__information-name{
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        width: 270px;
+        text-align: center;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-34%);
+
+    }
+    .site__information-menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        line-height: 30px;
+    }
+    .site__information-menu div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .site__information-menu div:first-child{
+        width: 210px;
+    }
+    .site__information-menu div:last-child{
+        width: 86px;
+    }
+    .site__information-links{
+        display: block;
+    }
+    .site__information-stomatology,
+    .site__information-maxillofacial{
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 44px;
+        line-height: 32px;
+    }
+    .site__information-stomatology{
+        margin-right: 20px;
+    }
+    .site__information-stomatology:before{
+        position: absolute;
+        width: 37px;
+        height: 37px;
+        top: 0;
+        left: 0;
+        background: url("../img/stomatology.png")no-repeat center;
+        background-size: contain;
+        content: "";
+    }
+    .site__information-maxillofacial:before{
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        top: 0;
+        left: 0;
+        background: url("../img/maxillofacial.png")no-repeat center;
+        background-size: contain;
+        content: "";
+    }
+     /* --------------- /site__information --------------- */
+
     /* --------------- logo --------------- */
     .logo {
+        width: 331px;
         top: 78px;
+        text-align: center;
+        font-size:24px;
+        font-weight: 400;
         transform: translateX(-54%);
         -webkit-transform: translateX(-54%);
     }
     .logo img{
-        width: 331px;
+        width: 100%;
+    }
+    .logo span{
+        display: block;
     }
     /* --------------- /logo --------------- */
 }
@@ -933,6 +1170,7 @@
         position: relative;
         max-width: 100%;
         height: 210px;
+        margin-bottom: 33px;
     }
     .site__header-tel {
         top: 23px;
@@ -942,7 +1180,6 @@
         margin-left: 274px;
     }
     .site__header-work-time {
-        width: 300px;
         top: 23px;
         right: 50%;
         left: auto;
@@ -984,17 +1221,31 @@
     }
     .aside-menu__wrap{
         position: relative;
-        top: 30px;
+        width: 100%;
+        top: 0;
         margin: 0;
-        border-radius: 5px;
-        background: #f3f3f3;
+        border-radius: 0 0 5px 5px;
     }
     .aside-menu {
         margin-bottom: 49px;
+        background: #f3f3f3;
+        padding: 12px 10px;
+        border-radius: 5px;
+    }
+    .aside-menu__title{
+        display: block;
+        padding: 10px 15px;
+        background: #0090ff;
+        color: #fff;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px 5px 0 0;
     }
     .site__content-wrap{
         display: block;
         width: 698px;
+        background: #fff;
     }
     .site__footer-layout{
         max-width: 940px;
@@ -1054,7 +1305,7 @@
     /* --------------- /menu --------------- */
     .slider {
         width: 698px;
-        margin-top: 30px;
+        margin: 0 auto;
     }
     /* --------------- /menu --------------- */
 
