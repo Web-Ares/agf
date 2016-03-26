@@ -54,7 +54,6 @@
     position: relative;
     height: 260px;
     z-index: 3;
-    overflow: hidden;
 }
 .site__footer {
     z-index: 2;
@@ -238,6 +237,11 @@
     font-weight: 600;
     text-align: left;
     color: #fff;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.header__menu-btn:hover{
+    opacity: .7;
 }
 .header__menu-btn > span {
     display: inline-block;
@@ -353,6 +357,11 @@
     text-align: left;
     font-weight: 600;
     color: #fff;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.aside-menu__btn:hover{
+    opacity: .7;
 }
 .aside-menu__btn > span {
     display: inline-block;
@@ -534,7 +543,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-left: 7px;
+    margin: 0 8px !important;
     opacity: 1;
     transition: background .3s ease, border .3s ease;
 
@@ -560,7 +569,6 @@
     list-style-type: disc;
 }
 .plastic-surgery ul li{
-    margin-bottom: 5px;
     line-height: 30px;
     letter-spacing: .8px;
     list-style-position: inside;
@@ -867,6 +875,9 @@
     .site__header {
         padding: 0 24px;
     }
+    .site__title {
+        margin-bottom: 15px;
+    }
     .header__menu-btn {
         top: 32px;
         left: 24px;
@@ -899,17 +910,24 @@
     .site__location {
         position: absolute;
         z-index: 3;
-        top: 46px;
-        right: 0;
+        top: 48px;
+        right: 13px;
     }
     .site__location-town, .site__location-mail {
         display: inline-block;
     }
     .site__location-mail {
-        margin-left: 10px;
+        margin-left: 13px;
+    }
+    .site:after {
+        height: 76px;
+    }
+    .site__footer {
+        height: 76px;
     }
     .site__footer-layout{
-        padding: 20px 160px 0 13px;
+        height: 76px;
+        padding: 28px 185px 0 24px;
         text-align: justify;
     }
     .site__footer-layout:after{
@@ -928,7 +946,28 @@
     /* --------------- slider --------------- */
     .slider{
         order: 1;
-        margin: 50px auto 0;
+        margin: 50px auto 10px;
+    }
+    .slider .slider__icon {
+        bottom: 55px;
+    }
+    .slider__more {
+        bottom: 78px;
+        right: 34px;
+        padding: 0 25px 14px 0;
+    }
+    .slider__title {
+        padding: 56px 36px 0 47%;
+        line-height: 25px;
+    }
+    .slider__title h2 {
+        padding: 0 90px 13px 0;
+        margin-bottom: 16px;
+        line-height: 40px;
+    }
+    .slider__title span {
+        display: block;
+        padding-right: 100px;
     }
     /* --------------- /slider --------------- */
 
@@ -951,7 +990,7 @@
     .aside-menu__btn {
         position: absolute;
         z-index: 1;
-        top: -36px;
+        top: -33px;
         left: 0px;
         width: 141px;
     }
@@ -965,6 +1004,9 @@
         order: 2;
         width: 213px;
     }
+    .reviews__item {
+        margin-bottom: 35px;
+    }
     /* --------------- /reviews --------------- */
 
     /* --------------- plastic-surgery--------------- */
@@ -976,7 +1018,7 @@
 
     /* --------------- news --------------- */
     .news {
-        margin-bottom: 38px;
+        margin-bottom: 37px;
     }
     .news__wrap{
         text-align: justify;
@@ -1110,7 +1152,7 @@
         position: relative;
         width: 100%;
         margin-bottom: 60px;
-        padding: 15px 0 77px;
+        padding: 17px 0 95px;
         border-radius: 5px;
         background: #25b2f0 url(../pic/specialist-bg.png) no-repeat center;
     }
@@ -1198,6 +1240,7 @@
     .site__information-wrap{
         position: relative;
         max-width: 940px;
+        padding: 0 21px;
         margin: 0 auto;
     }
     .site__information a{
@@ -1211,23 +1254,23 @@
     .site__information-logo{
         position: relative;
         width: 367px;
-        margin-bottom: 40px;
+        margin-bottom: 45px;
     }
     .site__information-name{
         position: absolute;
-        top: 30px;
+        top: 27px;
         left: 50%;
         width: 270px;
+        font-size: 12px;
         text-align: center;
         transform: translateX(-50%);
         -webkit-transform: translateX(-34%);
-
     }
     .site__information-menu{
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 300px;
+        top: 1px;
+        right: 17px;
+        width: 298px;
         line-height: 30px;
     }
     .site__information-menu div{
@@ -1235,7 +1278,7 @@
         vertical-align: top;
     }
     .site__information-menu div:first-child{
-        width: 210px;
+        width: 208px;
     }
     .site__information-menu div:last-child{
         width: 86px;
@@ -1248,18 +1291,18 @@
         position: relative;
         display: inline-block;
         vertical-align: top;
-        padding-left: 44px;
+        padding-left: 40px;
         line-height: 32px;
     }
     .site__information-stomatology{
-        margin-right: 20px;
+        margin-right: 34px;
     }
     .site__information-stomatology:before{
         position: absolute;
         width: 37px;
         height: 37px;
         top: 0;
-        left: 0;
+        left: -2px;
         background: url("../img/stomatology.png")no-repeat center;
         background-size: contain;
         content: "";
@@ -1268,8 +1311,8 @@
         position: absolute;
         width: 39px;
         height: 39px;
-        top: 0;
-        left: 0;
+        top: -6px;
+        left: -2px;
         background: url("../img/maxillofacial.png")no-repeat center;
         background-size: contain;
         content: "";
@@ -1288,9 +1331,11 @@
     }
     .logo img{
         width: 100%;
+        margin-bottom: 3px;
     }
     .logo span{
         display: block;
+        font-size: 19px;
     }
     /* --------------- /logo --------------- */
 }
