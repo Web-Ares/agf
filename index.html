@@ -37,7 +37,10 @@
 
     <header class="site__header">
 
-        <h1 class="logo"><img src="img/logo.png" width="" height="" alt=""></h1><!-- /logo -->
+        <h1 class="logo">
+            <img src="img/logo.png" alt="logo">
+            <span>пластическая хирургия</span>
+        </h1><!-- /logo -->
 
         <!-- menu -->
         <nav class="header__menu">
@@ -62,8 +65,8 @@
 
         <!-- site__header-work-time -->
         <div class="site__header-work-time">
-            <span>Будни: 9:00 – 21:00</span>
-            <span>Суббота: 9:00 – 17:00</span>
+            <div>Будни: <span>9:00 – 21:00</span></div>
+            <div>Суббота: <span>9:00 – 17:00</span></div>
         </div>
         <!-- /site__header-work-time -->
 
@@ -93,7 +96,7 @@
                     <!-- aside-menu__btn -->
                     <button class="aside-menu__btn"><span></span>Услуги</button>
                     <!-- /aside-menu__btn -->
-
+                    <div class="aside-menu__title">Услуги</div>
                     <!-- aside-menu__wrap -->
                     <ul class="aside-menu__wrap">
                         <li>
@@ -359,6 +362,78 @@
             </div>
             <!-- site__content-wrap -->
 
+            <!-- specialist -->
+            <div class="specialist">
+
+                <h2 class="site__title">специалисты</h2>
+
+                <!-- Swiper -->
+                <div class="swiper-container specialist__slider">
+
+                    <div class="swiper-wrapper">
+
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+
+                            <!-- specialist__item -->
+                            <div class="specialist__item">
+                                <div class="specialist__pic" style="background-image: url(pic/specialist01.jpg)"></div>
+                                <div class="specialist__name">Анжелика Всеволодовна</div>
+                                <div class="specialist__surname">ЗАКАБЛУКОВСКАЯ</div>
+                                <div class="specialist__position">Главный врач</div>
+                            </div>
+                            <!-- /specialist__item -->
+
+                        </div>
+                        <!-- /swiper-slide -->
+
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+
+                            <!-- specialist__item -->
+                            <div class="specialist__item">
+                                <div class="specialist__pic" style="background-image: url(pic/specialist02.jpg)"></div>
+                                <div class="specialist__name">Иван Иванович</div>
+                                <div class="specialist__surname">ИВАНОВ</div>
+                                <div class="specialist__position">Главный врач</div>
+                            </div>
+                            <!-- /specialist__item -->
+
+                        </div>
+                        <!-- /swiper-slide -->
+
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <!-- specialist__item -->
+
+                            <div class="specialist__item">
+                                <div class="specialist__pic" style="background-image: url(pic/specialist01.jpg)"></div>
+                                <div class="specialist__name">Анжелика Всеволодовна</div>
+                                <div class="specialist__surname">ЗАКАБЛУКОВСКАЯ</div>
+                                <div class="specialist__position">Главный врач</div>
+                            </div>
+                            <!-- /specialist__item -->
+
+                        </div>
+                        <!-- /swiper-slide -->
+
+
+                    </div>
+                    <!-- /Swiper -->
+
+                </div>
+
+                    <!-- specialist-button-next -->
+                    <div class="specialist-button-next"></div>
+                    <!-- /specialist-button-next -->
+
+                    <!-- specialist-button-prev -->
+                    <div class="specialist-button-prev"></div>
+                    <!-- /specialist-button-prev -->
+
+            </div>
+            <!-- /specialist -->
+
             <!-- news -->
             <div class="news">
 
@@ -443,6 +518,65 @@
         <a class="site__location-mail" href="#">contact@agf-clinica.ru​</a>
     </address>
     <!-- /site__location -->
+
+    <!-- site__information -->
+    <div class="site__information">
+
+        <!-- site__information-wrap -->
+        <div class="site__information-wrap">
+
+            <!-- /site__location -->
+            <div class="site__information-logo">
+                <img src="img/information-logo.png" alt="information-logo">
+
+                <!-- site__information-name -->
+                <div class="site__information-name">пластическая хирургия</div>
+                <!-- /site__information-name -->
+
+            </div>
+            <!-- /site__location -->
+
+            <!-- site__information-menu -->
+            <div class="site__information-menu">
+
+                <div>
+                    <!-- site__information-links -->
+                    <a class="site__information-links" href="#">Об отделении</a>
+                    <a class="site__information-links" href="#">Специалисты</a>
+                    <a class="site__information-links" href="#">Фото до и после</a>
+                    <!-- /site__information-links -->
+                </div>
+
+                <div>
+                    <!-- site__information-links -->
+                    <a class="site__information-links" href="#">Отзывы</a>
+                    <a class="site__information-links" href="#">Пациентам</a>
+                    <a class="site__information-links" href="#">Контакты</a>
+                    <!-- /site__information-links -->
+                </div>
+
+            </div>
+            <!-- /site__information-menu -->
+
+            <!-- site__information-type -->
+            <div class="site__information-type">
+
+                <!-- site__information-stomatology -->
+                <a class="site__information-stomatology" href="#">Стоматология</a>
+                <!-- /site__information-stomatology -->
+
+                <!-- site__information-maxillofacial -->
+                <a class="site__information-maxillofacial" href="#">Челюстно-лицевая хирургия</a>
+                <!-- /site__information-maxillofacial -->
+
+            </div>
+            <!-- /site__information-type -->
+
+        </div>
+        <!-- /site__information-wrap -->
+
+    </div>
+    <!-- /site__information -->
 
     <footer class="site__footer">
 
