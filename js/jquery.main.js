@@ -4,64 +4,111 @@
     $( function(){
 
         $('.catalog').each(function () {
-            Catalog($(this));
+            Catalog( $( this ) );
         });
 
         $('.aside-menu__wrap').each(function() {
-            Menu($(this));
+            Menu( $( this ) );
         });
 
         $('.swiper-container').each(function () {
-            Slider($(this));
+            Slider( $( this ) );
         });
 
-        $('.header__menu-btn').on({
-            'click':function(){
-                var curElem = $(this).parent();
-
-                if (curElem.hasClass('active')) {
-                    curElem.removeClass('active');
-                } else {
-                    curElem.addClass('active');
-                }
-
-            }
+        $('.header__menu-btn').each(function () {
+            MenuOpen($(this));
         });
 
-        $('.aside-menu__btn').on({
-            'click':function(){
-                var curElem = $(this).parent();
-
-                if (curElem.hasClass('active')) {
-                    curElem.removeClass('active');
-                } else {
-                    curElem.addClass('active');
-                }
-
-            }
+        $('.aside-menu__btn').each(function () {
+            MenuOpen( $ ( this ) );
         });
 
-        $('.btn-up').on({
-            'click':function(){
-                $('html, body').animate({scrollTop: 0}, 600);
-            }
+        $('.btn-up').each(function () {
+            SlideToTop( $( this ) );
         });
 
-        $(window).on({
-            'scroll':function(){
-                if($(window).scrollTop() > $(window).height()){
-                    $('.btn-up').fadeIn();
-                } else {
-                    $('.btn-up').fadeOut();
-                }
-                if($(window).scrollTop() + $(window).height() > $('.site__footer').offset().top + 16) {
-                    $('.btn-up').css({ bottom: $(window).scrollTop() + $(window).height() - $('.footer').offset().top + 16 });
-                } else {
-                    $('.btn-up').css({ bottom: '0' });
-                }
-            }
-        });
     });
+
+    var SlideToTop = function( obj ) {
+
+        //private properties
+        var _obj = obj;
+
+        //private methods
+        var _addEvents = function() {
+
+                _obj.on( {
+                    click: function() {
+
+                        $( 'html, body' ).animate( {scrollTop: 0}, 600 );
+                    }
+                });
+
+                $(window).on( {
+                    'scroll':function() {
+                        if( $( window ).scrollTop() > $( window ).height() ) {
+                            $( _obj ).fadeIn();
+                        } else {
+                            $( _obj ).fadeOut();
+                        }
+                        if( $( window ).scrollTop() + $( window ).height() > $( '.site__footer' ).offset().top + 16 ) {
+                            $( _obj ).css( { bottom: $( window ).scrollTop() + $( window ).height() - $( '.footer' ).offset().top + 16 } );
+                        } else {
+                            $( _obj ).css( { bottom: '0' } );
+                        }
+                    }
+                });
+            },
+            _init = function() {
+
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var MenuOpen = function(obj) {
+
+        //private properties
+        var _obj = obj;
+
+        //private methods
+        var _addEvents = function() {
+
+                _obj.on( {
+                    click: function() {
+                        var curElem = _obj.parent();
+
+                        console.log( curElem );
+
+                        if (curElem.hasClass( 'active' )) {
+                            curElem.removeClass( 'active' );
+                        } else {
+                            curElem.addClass( 'active' );
+                        }
+                        if (event.stopPropagation) {
+                            event.stopPropagation();
+                        } else {
+                            event.cancelBubble = true;
+                        }
+                    }
+                });
+            },
+            _init = function() {
+
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var Catalog = function(obj) {
 
@@ -127,25 +174,23 @@
         var _obj = $(this),
             _items=$('.aside-menu__wrap>li');
 
-
         //private methods
         var _addEvents = function() {
 
+                _items.on( {
+                    click: function() {
+                        var curElem = $( this ),
+                            curMenu= curElem.find( 'ul' );
 
-                _items.on({
-                    click: function(){
-                        var curElem = $(this),
-                            curMenu= curElem.find('ul');
-
-                        if(curMenu.is(':visible')){
-                            curMenu.slideUp(300);
-                            curElem.removeClass('open');
+                        if( curMenu.is( ':visible' ) ) {
+                            curMenu.slideUp( 300 );
+                            curElem.removeClass( 'open' );
                         }
                         else{
-                            curMenu.slideDown(300);
-                            curElem.addClass('open');
+                            curMenu.slideDown( 300 );
+                            curElem.addClass( 'open' );
                         }
-                        if (event.stopPropagation) {
+                        if ( event.stopPropagation ) {
                             event.stopPropagation();
                         } else {
                             event.cancelBubble = true;
@@ -153,18 +198,18 @@
                     }
                 });
 
-                $('body').on({
+                $('body').on( {
 
-                    click: function(e){
+                    click: function(e) {
 
                         var elem=$(e.target);
 
-                        var curElem = $('.aside-menu__wrap>li'),
-                            curMenu= curElem.find('ul');
+                        var curElem = $( '.aside-menu__wrap>li' ),
+                            curMenu= curElem.find( 'ul' );
 
-                        if(curMenu.is(':visible')){
-                            curMenu.slideUp(300);
-                            curElem.removeClass('open');
+                        if( curMenu.is( ':visible' ) ) {
+                            curMenu.slideUp( 300 );
+                            curElem.removeClass( 'open' );
                         }
                     }
                 });
@@ -183,15 +228,15 @@
         _init();
     };
 
-    var Slider = function (obj) {
+    var Slider = function ( obj ) {
 
         //private properties
         var _self = this,
-            _paginator = obj.find($('.slider__icon')),
-            _next = $('.photo-button-next'),
-            _prev = $('.photo-button-prev'),
-            _nextSpecialist = $('.specialist-button-next'),
-            _prevSpecialist = $('.specialist-button-prev'),
+            _paginator = obj.find($( '.slider__icon' )),
+            _next = $( '.photo-button-next' ),
+            _prev = $( '.photo-button-prev' ),
+            _nextSpecialist = $( '.specialist-button-next' ),
+            _prevSpecialist = $( '.specialist-button-prev' ),
             _obj = obj;
 
         //private methods
@@ -201,8 +246,8 @@
             _init = function () {
                 _addEvents();
             };
-        if (_obj.hasClass('slider__wrap')) {
-            var _swiperPromo = new Swiper(_obj, {
+        if ( _obj.hasClass( 'slider__wrap' ) ) {
+            var _swiperPromo = new Swiper( _obj, {
                 slidesPerView: 1,
                 autoplay: 10000,
                 speed: 1000,
@@ -211,8 +256,8 @@
                 paginationClickable: true
             });
         }
-        if (_obj.hasClass('photo__wrap')) {
-            var _swiper = new Swiper(_obj, {
+        if ( _obj.hasClass( 'photo__wrap' ) ) {
+            var _swiper = new Swiper( _obj, {
                 nextButton: _next,
                 prevButton: _prev,
                 slidesPerView: 1,
@@ -222,8 +267,8 @@
             });
 
         }
-        if (_obj.hasClass('specialist__slider')) {
-            var _specialist = new Swiper(_obj, {
+        if ( _obj.hasClass( 'specialist__slider' ) ) {
+            var _specialist = new Swiper( _obj, {
                 nextButton: _nextSpecialist,
                 prevButton: _prevSpecialist,
                 slidesPerView: 4,
@@ -236,7 +281,6 @@
                     }
                 }
             });
-
         }
 
         //public properties

@@ -206,7 +206,7 @@
     display: none;
     position: fixed;
     bottom: 0;
-    right: 50px;
+    right: 10px;
     background: url("../img/back-to-top.png") no-repeat;
     width: 55px;
     height: 57px;
@@ -313,7 +313,7 @@
     letter-spacing: 0.7px;
 }
 .header__menu.active .header__menu-wrap {
-    margin-left: 24px;
+    margin-left: 0;
 }
 .header__menu-wrap a:hover {
     color:#2d4b9b;
@@ -424,7 +424,7 @@
 
 }
 .aside-menu.active .aside-menu__wrap {
-    margin-left: 0;
+    margin-left: -14px;
 }
 .aside-menu__wrap a:hover {
     color:#2d4b9b;
@@ -871,7 +871,8 @@
     .site__tabs .maxillofacial,
     .site__tabs .stomatology {
         display: inline-block;
-        padding: 2px 30px 5px;
+        height: 26px;
+        padding: 3px 30px 5px;
         margin-left: -4px;
     }
     .site__content-wrap{
@@ -965,6 +966,13 @@
         display: inline-block;
         vertical-align: top;
     }
+
+    /* --------------- btn-up --------------- */
+    .btn-up {
+        right: 20px;
+    }
+    /* --------------- /btn-up --------------- */
+
     /* --------------- slider --------------- */
     .slider{
         order: 1;
@@ -1470,8 +1478,14 @@
     .site__information-menu {
         right: -8px;
     }
-    /* --------------- menu --------------- */
 
+    /* --------------- btn-up --------------- */
+    .btn-up {
+        right: 50px;
+    }
+    /* --------------- /btn-up --------------- */
+
+    /* --------------- menu --------------- */
     .header__menu {
         top: auto;
         bottom: 0;
@@ -1482,7 +1496,6 @@
         background: -o-linear-gradient(top, #a2d6f0 0%,#3765a9 50%);
         background: linear-gradient(top, #a2d6f0 0%,#3765a9 50%);
     }
-
     .header__menu-btn {
         display: none;
     }
