@@ -201,6 +201,22 @@
 }
 /* --------------- /site --------------- */
 
+/* --------------- btn-up --------------- */
+.btn-up {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    background: url("../img/back-to-top.png") no-repeat;
+    width: 55px;
+    height: 57px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 5;
+}
+/* --------------- /btn-up --------------- */
+
 /* --------------- header__menu --------------- */
 .header__menu {
   font-family: 'Open Sans', sans-serif;
@@ -276,12 +292,14 @@
     z-index: 4;
     top: 66px;
     cursor: default;
-    -webkit-transition: margin .3s ease;
-    transition: margin .3s ease;
+
     width: 230px;
     margin-left: -230px;
+    border-radius: 5px;
     background: #fff;
     border-bottom: 1px solid #707070;
+    -webkit-transition: margin .3s ease;
+    transition: margin .3s ease;
 }
 .header__menu a, .header__menu a:visited {
     font-size: 13px;
@@ -295,7 +313,7 @@
     letter-spacing: 0.7px;
 }
 .header__menu.active .header__menu-wrap {
-    margin-left: 0;
+    margin-left: 24px;
 }
 .header__menu-wrap a:hover {
     color:#2d4b9b;
@@ -332,7 +350,6 @@
 }
 .aside-menu a, .aside-menu a:visited {
     display: block;
-    padding: 5px 10px;
     font-size: 13px;
     color: #707070;
     font-weight: 700;
@@ -397,6 +414,7 @@
     top: 66px;
     width: 230px;
     margin-left: -250px;
+    border-radius: 5px;
     background: #fff;
     color: #707070;
     text-align: left;
@@ -414,7 +432,7 @@
 }
 .aside-menu__wrap span{
     display: block;
-    padding: 10px 0 10px 21px;
+    padding: 11px 15px 11px 28px;
     margin-top: 0;
     color: #707070;
     font-size: 14px;
@@ -432,16 +450,16 @@
 }
 .aside-menu__wrap>li:before{
     position: absolute;
-    top: 17px;
+    top: 19px;
     border: solid transparent;
     content: " ";
     height: 0;
     width: 0;
     pointer-events: none;
     border-color: rgba(163, 163, 163, 0);
-    border-top-color: #b4b4b4;
-    border-width: 6px 6px 0 6px;
-    left: 4px;
+    border-top-color: #707070;
+    border-width: 5px 5px 0 5px;
+    left: 13px;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transition: all .3s ease;
@@ -461,7 +479,7 @@
 }
 .aside-menu__wrap ul{
     display: none;
-    margin-left: 40px;
+    margin-left: 42px;
 }
 .aside-menu__wrap ul li{
     padding: 0;
@@ -599,9 +617,6 @@
 .reviews__item{
     margin-bottom: 52px;
     letter-spacing: .8px;
-}
-.reviews__item p{
-
 }
 .reviews__item-user{
     margin-bottom: 10px;
@@ -856,7 +871,7 @@
     .site__tabs .maxillofacial,
     .site__tabs .stomatology {
         display: inline-block;
-        padding: 4px 30px;
+        padding: 2px 30px 5px;
         margin-left: -4px;
     }
     .site__content-wrap{
@@ -873,7 +888,11 @@
         -webkit-align-items: flex-start;
     }
     .site__header {
+        height: 138px;
         padding: 0 24px;
+    }
+    .header_inside{
+        height: 215px;
     }
     .site__title {
         margin-bottom: 15px;
@@ -912,6 +931,9 @@
         z-index: 3;
         top: 48px;
         right: 13px;
+    }
+    .location_inside{
+        top: 22px;
     }
     .site__location-town, .site__location-mail {
         display: inline-block;
@@ -972,9 +994,6 @@
     /* --------------- /slider --------------- */
 
     /* --------------- menu --------------- */
-    .site__header {
-        height: 138px;
-    }
     .header__menu-wrap {
         top: 100px;
     }
@@ -1246,7 +1265,6 @@
     .site__information a{
         color: #707070;
         text-decoration: underline;
-        transition: text-decoration .3s ease;
     }
     .site__information a:hover{
         text-decoration: none;
@@ -1344,27 +1362,36 @@
     .site__header {
         position: relative;
         max-width: 100%;
-        height: 210px;
-        margin-bottom: 33px;
+        height: 183px;
+        margin-bottom: 30px;
+    }
+    .header_inside{
+        height: 176px;
     }
     .site__header-tel {
-        top: 23px;
+        top: 18px;
         left: 50%;
         right: auto;
         width: 190px;
-        margin-left: 274px;
+        margin-left: 282px;
+    }
+    .site__header-request {
+        line-height: 48px;
     }
     .site__header-work-time {
-        top: 23px;
+        top: 19px;
         right: 50%;
         left: auto;
-        margin-right: 163px;
+        margin-right: 292px;
     }
     .site__location {
         width: 300px;
-        top: 107px;
+        top: 94px;
         right: 50%;
-        margin-right: 178px;
+        margin-right: 164px;
+    }
+    .location_inside{
+        top: 68px;
     }
     .site__location-mail {
         margin-left: 0;
@@ -1384,6 +1411,12 @@
         max-width: 940px;
         padding: 0;
     }
+    .site__title {
+        margin-bottom: 20px;
+    }
+    .site__title span {
+        display: inline-block;
+    }
     .site__aside{
         width: 220px;
         margin-bottom: 0;
@@ -1398,18 +1431,19 @@
         position: relative;
         width: 100%;
         top: 0;
+        padding-top: 10px;
         margin: 0;
         border-radius: 0 0 5px 5px;
     }
     .aside-menu {
-        margin-bottom: 49px;
-        background: #f3f3f3;
-        padding: 12px 10px;
+        padding: 13px 11px;
+        margin-bottom: 53px;
         border-radius: 5px;
+        background: #f3f3f3;
     }
     .aside-menu__title{
         display: block;
-        padding: 10px 15px;
+        padding: 8px 14px;
         background: #0090ff;
         color: #fff;
         text-align: left;
@@ -1424,10 +1458,17 @@
     }
     .site__footer-layout{
         max-width: 940px;
+        padding: 28px 185px 0 0px;
         margin: 0 auto;
     }
     .site__footer-layout {
         padding-right: 0;
+    }
+    .site__information-wrap {
+        padding: 0;
+    }
+    .site__information-menu {
+        right: -8px;
     }
     /* --------------- menu --------------- */
 
@@ -1461,7 +1502,7 @@
         height: 35px;
         padding: 7px 20px;
         border: none;
-        color: #fff;
+        color: #fff !important;
         transition: background .3s ease;
         -webkit-transition: background .3s ease;
     }
@@ -1480,15 +1521,58 @@
     /* --------------- /menu --------------- */
     .slider {
         width: 698px;
-        margin: 0 auto;
+        margin: 0 auto 20px;
+    }
+    .slider__title {
+        padding: 58px 36px 0 46%;
     }
     /* --------------- /menu --------------- */
 
     /* --------------- plastic-surgery --------------- */
     .plastic-surgery {
         width: 100%;
+        margin-bottom: 45px;
+    }
+    .plastic-surgery ul li {
+        letter-spacing: .2px;
+    }
+    .plastic-surgery p {
+        letter-spacing: .4px;
     }
     /* --------------- /plastic-surgery --------------- */
+
+    /* --------------- photo --------------- */
+    .photo__slider {
+        margin: 0 0 45px 0;
+    }
+    .photo-button-prev {
+        left: 22px;
+    }
+    .photo-button-next {
+        right: 22px;
+    }
+    /* --------------- /photo --------------- */
+
+    /* --------------- specialist --------------- */
+    .specialist {
+        margin-bottom: 38px;
+    }
+    .specialist__slider {
+        margin: 0 16px;
+    }
+    /* --------------- /specialist --------------- */
+
+    /* --------------- news --------------- */
+    .news {
+        margin-bottom: 53px;
+    }
+    .news__item {
+        width: 31.2%;
+    }
+    .news__pic {
+        height: 141px;
+    }
+    /* --------------- /news --------------- */
 
     /* --------------- reviews --------------- */
     .reviews{
@@ -1499,7 +1583,9 @@
 
     /* --------------- /menu --------------- */
     .logo {
-        top: 19px;
+        top: 10px;
+        transform: translateX(-51%);
+        -webkit-transform: translateX(-51%);
     }
     /* --------------- /menu --------------- */
 

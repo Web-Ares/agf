@@ -40,6 +40,27 @@
 
             }
         });
+
+        $('.btn-up').on({
+            'click':function(){
+                $('html, body').animate({scrollTop: 0}, 600);
+            }
+        });
+
+        $(window).on({
+            'scroll':function(){
+                if($(window).scrollTop() > $(window).height()){
+                    $('.btn-up').fadeIn();
+                } else {
+                    $('.btn-up').fadeOut();
+                }
+                if($(window).scrollTop() + $(window).height() > $('.site__footer').offset().top + 16) {
+                    $('.btn-up').css({ bottom: $(window).scrollTop() + $(window).height() - $('.footer').offset().top + 16 });
+                } else {
+                    $('.btn-up').css({ bottom: '0' });
+                }
+            }
+        });
     });
 
     var Catalog = function(obj) {
