@@ -5,13 +5,31 @@
 
 /*
     main styles
-    version: 15.01.2013
+    version: 25.03.2016
 
     placeholder
 
     fonts
 
     site
+
+    header__menu
+
+    aside-menu
+
+    slider
+
+    reviews
+
+    plastic-surgery
+
+    photo
+
+    news
+
+    specialist
+
+    catalog
 
     logo
 */
@@ -84,7 +102,7 @@
 .site__tabs .stomatology{
     display: block;
     vertical-align: top;
-    padding: 5px 0;
+    padding: 5px 0 6px;
     font-size: 13px;
     color: #fff;
     text-align: center;
@@ -95,11 +113,13 @@
 .site__tabs .active{
     background: #009fd9;
     text-decoration: none;
+    cursor: default;
 }
 .site__tabs .plastic:hover,
 .site__tabs .maxillofacial:hover,
 .site__tabs .stomatology:hover{
     background: #009fd9;
+    text-decoration: none;
 }
 .site__header-work-time{
     position: absolute;
@@ -199,6 +219,15 @@
 .site__location-mail {
     margin-top: 6px;
 }
+.site__information{
+    display: none;
+}
+.site__aside{
+    margin-bottom: 34px;
+}
+.site__aside .reviews{
+    display: none;
+}
 /* --------------- /site --------------- */
 
 /* --------------- btn-up --------------- */
@@ -206,7 +235,7 @@
     display: none;
     position: fixed;
     bottom: 0;
-    right: 10px;
+    right: 0;
     background: url("../img/back-to-top.png") no-repeat;
     width: 55px;
     height: 57px;
@@ -322,12 +351,6 @@
 /* --------------- /header__menu --------------- */
 
 /* --------------- aside-menu --------------- */
-.site__aside{
-    margin-bottom: 34px;
-}
-.site__aside .reviews{
-   display: none;
-}
 .aside-menu {
     position: relative;
     font: 13px 'Open Sans', sans-serif;
@@ -495,7 +518,6 @@
 /* --------------- slider--------------- */
 .slider{
     position: relative;
-    max-width: 720px;
     overflow: hidden;
     margin: 0 -13px 1px -13px;
 }
@@ -603,7 +625,7 @@
 }
 .reviews__all{
     position: absolute;
-    top: 2px;
+    top: 0;
     right: 0;
     font-size: 14px;
     font-weight: 400;
@@ -711,6 +733,11 @@
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
 }
+.photo__title{
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #707070;
+}
 /* --------------- /photo --------------- */
 
 /* --------------- news --------------- */
@@ -759,12 +786,6 @@
     display: none;
 }
 /* --------------- /specialist --------------- */
-
-/* --------------- site__information --------------- */
-.site__information{
-    display: none;
-}
-/* --------------- /site__information --------------- */
 
 /* --------------- catalog --------------- */
 .catalog {
@@ -837,6 +858,102 @@
     display: none;
 }
 /* --------------- /catalog --------------- */
+
+/* --------------- our-specialists --------------- */
+.our-specialists__wrap{
+    text-align: center;
+}
+.our-specialists__wrap:after{
+    display: inline-block;
+    width: 100%;
+    content: "";
+}
+.our-specialists__item{
+    display: inline-block;
+    vertical-align: top;
+    width: 205px;
+    margin: 0 10px 35px;
+    color: #000;
+    letter-spacing: .3px;
+    text-align: center;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.our-specialists__item:hover{
+    opacity: .8;
+}
+.our-specialists__item:hover .our-specialists__name{
+    text-decoration: none;
+}
+.our-specialists__item:hover .our-specialists__surname{
+    text-decoration: none;
+}
+.our-specialists__pic{
+    width: 100%;
+    height: 241px;
+    margin-bottom: 17px;
+    background: no-repeat center;
+}
+.our-specialists__name{
+    margin-bottom: 4px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.our-specialists__surname{
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+/* --------------- /our-specialists --------------- */
+
+/* --------------- description --------------- */
+.description{
+    margin-bottom: 20px;
+}
+.description__pic{
+    display: block;
+    vertical-align: top;
+    width: 212px;
+    height: 241px;
+    margin: 0 auto 17px;
+    background: no-repeat center;
+}
+.description__position{
+    margin-bottom: 15px;
+    font-style: italic;
+    text-align: center;
+}
+.description__text{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+.description__text h3{
+    margin-bottom: 15px;
+}
+.description__text p{
+    margin-bottom: 15px;
+}
+.description__slider{
+    position: relative;
+    height: 248px;
+    padding: 84px 13px 33px 13px;
+    margin: 0 -13px 27px;
+    border-radius: 5px;
+    background: #f3f3f3;
+}
+.description__item{
+    position: relative;
+    width: 98px;
+    height: 140px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background: no-repeat center;
+}
+/* --------------- /description --------------- */
 
 /* --------------- logo --------------- */
 .logo {
@@ -1004,6 +1121,7 @@
 
 @media (min-width: 768px){
 
+    /* --------------- site --------------- */
     .site__content-layout{
         padding: 0 24px;
         margin: 0 auto;
@@ -1113,6 +1231,92 @@
         display: inline-block;
         vertical-align: top;
     }
+    .site__information{
+        display: block;
+        height: 212px;
+        padding: 40px 0;
+        background: #e6eeeb;
+    }
+    .site__information-wrap{
+        position: relative;
+        max-width: 940px;
+        padding: 0 21px;
+        margin: 0 auto;
+    }
+    .site__information a{
+        color: #707070;
+        text-decoration: underline;
+    }
+    .site__information a:hover{
+        text-decoration: none;
+    }
+    .site__information-logo{
+        position: relative;
+        width: 367px;
+        margin-bottom: 45px;
+    }
+    .site__information-name{
+        position: absolute;
+        top: 27px;
+        left: 50%;
+        width: 270px;
+        font-size: 12px;
+        text-align: center;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-34%);
+    }
+    .site__information-menu{
+        position: absolute;
+        top: 1px;
+        right: 17px;
+        width: 298px;
+        line-height: 30px;
+    }
+    .site__information-menu div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .site__information-menu div:first-child{
+        width: 208px;
+    }
+    .site__information-menu div:last-child{
+        width: 86px;
+    }
+    .site__information-links{
+        display: block;
+    }
+    .site__information-stomatology,
+    .site__information-maxillofacial{
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 40px;
+        line-height: 32px;
+    }
+    .site__information-stomatology{
+        margin-right: 34px;
+    }
+    .site__information-stomatology:before{
+        position: absolute;
+        width: 37px;
+        height: 37px;
+        top: 0;
+        left: -2px;
+        background: url("../img/stomatology.png")no-repeat center;
+        background-size: contain;
+        content: "";
+    }
+    .site__information-maxillofacial:before{
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        top: -6px;
+        left: -2px;
+        background: url("../img/maxillofacial.png")no-repeat center;
+        background-size: contain;
+        content: "";
+    }
+    /* --------------- /site --------------- */
 
     /* --------------- btn-up --------------- */
     .btn-up {
@@ -1124,6 +1328,10 @@
     .slider{
         order: 1;
         margin: 50px auto 10px;
+        max-width: 100%;
+    }
+    .slider__layout {
+        background-size: cover;
     }
     .slider .slider__icon {
         bottom: 55px;
@@ -1176,17 +1384,20 @@
     /* --------------- reviews --------------- */
     .reviews{
         order: 2;
-        width: 213px;
+        width: 30%;
     }
     .reviews__item {
         margin-bottom: 35px;
+    }
+    .inside_content-layout .reviews{
+        width: 100%;
     }
     /* --------------- /reviews --------------- */
 
     /* --------------- plastic-surgery--------------- */
     .plastic-surgery{
         order: 3;
-        width: 472px;
+        width: 65%;
     }
     /* --------------- /plastic-surgery --------------- */
 
@@ -1317,7 +1528,6 @@
         width: 100%;
         margin: 0 auto;
     }
-
     /* --------------- /photo --------------- */
 
     /* --------------- specialist --------------- */
@@ -1334,6 +1544,10 @@
         margin: 0 0 22px 24px;
         padding-bottom: 16px;
         border-color: #568fbd;
+        color: #fff;
+    }
+    .specialist .site__title .reviews__all{
+        right: 26px;
         color: #fff;
     }
     .specialist__slider{
@@ -1356,13 +1570,13 @@
     }
     .specialist__name{
         margin-bottom: 4px;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: underline;
     }
     .specialist__surname{
         margin-bottom: 6px;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: underline;
     }
     .specialist__position{
@@ -1404,93 +1618,43 @@
     }
     /* --------------- /specialist --------------- */
 
-    /* --------------- site__information --------------- */
-    .site__information{
-        display: block;
-        height: 212px;
-        padding: 40px 0;
-        background: #e6eeeb;
+    /* --------------- our-specialists --------------- */
+    .our-specialists{
+        width: 100%;
+        padding-top: 45px;
     }
-    .site__information-wrap{
-        position: relative;
-        max-width: 940px;
-        padding: 0 21px;
-        margin: 0 auto;
+    .our-specialists__wrap{
+        margin: 0 -15px;
+        text-align: left;
     }
-    .site__information a{
-        color: #707070;
-        text-decoration: underline;
+    .our-specialists__item{
+        width: 30%;
+        margin: 0 10px 35px;
     }
-    .site__information a:hover{
-        text-decoration: none;
+    /* --------------- /our-specialists --------------- */
+
+    /* --------------- description --------------- */
+    .description{
+        width: 100%;
+        margin: 50px 0 20px;
     }
-    .site__information-logo{
-        position: relative;
-        width: 367px;
-        margin-bottom: 45px;
+    .description__pic {
+        display: inline-block;
+        margin-right: 20px;
     }
-    .site__information-name{
-        position: absolute;
-        top: 27px;
-        left: 50%;
-        width: 270px;
-        font-size: 12px;
+    .description__text{
+        width: 66%;
+    }
+    .description__position{
+        text-align: left;
+    }
+    .description__slider {
+        height: 186px;
+        padding: 21px 78px;
+        margin: 0 0 38px 0;
         text-align: center;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-34%);
     }
-    .site__information-menu{
-        position: absolute;
-        top: 1px;
-        right: 17px;
-        width: 298px;
-        line-height: 30px;
-    }
-    .site__information-menu div{
-        display: inline-block;
-        vertical-align: top;
-    }
-    .site__information-menu div:first-child{
-        width: 208px;
-    }
-    .site__information-menu div:last-child{
-        width: 86px;
-    }
-    .site__information-links{
-        display: block;
-    }
-    .site__information-stomatology,
-    .site__information-maxillofacial{
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-        padding-left: 40px;
-        line-height: 32px;
-    }
-    .site__information-stomatology{
-        margin-right: 34px;
-    }
-    .site__information-stomatology:before{
-        position: absolute;
-        width: 37px;
-        height: 37px;
-        top: 0;
-        left: -2px;
-        background: url("../img/stomatology.png")no-repeat center;
-        background-size: contain;
-        content: "";
-    }
-    .site__information-maxillofacial:before{
-        position: absolute;
-        width: 39px;
-        height: 39px;
-        top: -6px;
-        left: -2px;
-        background: url("../img/maxillofacial.png")no-repeat center;
-        background-size: contain;
-        content: "";
-    }
-     /* --------------- /site__information --------------- */
+    /* --------------- description --------------- */
 
     /* --------------- logo --------------- */
     .logo {
@@ -1514,13 +1678,15 @@
 }
 
 @media (min-width: 940px) {
+
+    /* --------------- site --------------- */
     .site__header {
         position: relative;
         max-width: 100%;
         height: 183px;
         margin-bottom: 30px;
     }
-    .header_inside{
+    .site .header_inside{
         height: 176px;
     }
     .site__header-tel {
@@ -1625,6 +1791,7 @@
     .site__information-menu {
         right: -8px;
     }
+    /* --------------- /site --------------- */
 
     /* --------------- btn-up --------------- */
     .btn-up {
@@ -1667,7 +1834,7 @@
         -webkit-transition: background .3s ease;
     }
     .header__menu a:hover{
-        background: #78b5dd;
+        background: rgba(120, 181, 221, 0.34);
         color: #fff;
         text-decoration: none;
     }
@@ -1678,7 +1845,7 @@
     }
     /* --------------- /menu --------------- */
 
-    /* --------------- /menu --------------- */
+    /* --------------- slider --------------- */
     .slider {
         width: 698px;
         margin: 0 auto 20px;
@@ -1686,7 +1853,7 @@
     .slider__title {
         padding: 58px 36px 0 46%;
     }
-    /* --------------- /menu --------------- */
+    /* --------------- /slider --------------- */
 
     /* --------------- plastic-surgery --------------- */
     .plastic-surgery {
@@ -1741,13 +1908,13 @@
     }
     /* --------------- /reviews --------------- */
 
-    /* --------------- /menu --------------- */
+    /* --------------- logo --------------- */
     .logo {
         top: 10px;
         transform: translateX(-51%);
         -webkit-transform: translateX(-51%);
     }
-    /* --------------- /menu --------------- */
+    /* --------------- /logo --------------- */
 
     /* --------------- catalog --------------- */
     .catalog{
@@ -1770,4 +1937,24 @@
         overflow: hidden;
     }
     /* --------------- /catalog --------------- */
+
+    /* --------------- our-specialists --------------- */
+    .our-specialists{
+        width: 698px;
+        padding-top: 0;
+    }
+    .our-specialists__wrap{
+        margin: 0 -15px;
+    }
+    .our-specialists__item{
+        width: 212px;
+        margin: 0 14px 35px;
+    }
+    /* --------------- /our-specialists --------------- */
+
+    /* --------------- description --------------- */
+    .description{
+        margin-top: 0;
+    }
+    /* --------------- description --------------- */
 }
