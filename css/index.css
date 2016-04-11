@@ -166,6 +166,15 @@
     font-weight: 400;
 }
 .site__title{
+    margin-bottom: 17px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #707070;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.index__title{
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 13px;
@@ -175,7 +184,7 @@
     font-weight: 700;
     text-transform: uppercase;
 }
-.site__title span{
+.index__title span{
     display: block;
 }
 .site__location {
@@ -597,6 +606,44 @@
 }
 /* --------------- /slider--------------- */
 
+/* --------------- pagination --------------- */
+.pagination{
+    display: inline-block;
+    margin-bottom: 70px;
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+}
+.pagination a{
+    margin: 0 4px;
+    color: #707070;
+}
+.pagination a:hover{
+    text-decoration: underline;
+}
+.pagination__item{
+    display: inline-block;
+    vertical-align: top;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    line-height: 35px;
+    text-align: center;
+}
+a.pagination__item_action{
+    background-color: #0090ff;
+    color: #fff;
+    cursor: default;
+}
+.pagination__prev, .pagination__next{
+    line-height: 35px;
+    color: #707070;
+}
+a.pagination__item_action:hover{
+    text-decoration: none;
+}
+/* --------------- /pagination --------------- */
+
 /* --------------- plastic surgery--------------- */
 .plastic-surgery{
     margin-bottom: 20px;
@@ -619,7 +666,7 @@
 .reviews{
 
 }
-.reviews .site__title{
+.reviews .index__title{
     margin-bottom: 15px;
     padding-bottom: 17px;
 }
@@ -665,7 +712,7 @@
 .photo{
     margin-bottom: 10px
 }
-.photo .site__title{
+.photo .index__title{
     margin-bottom: 54px;
     padding-bottom: 13px;
 }
@@ -742,16 +789,15 @@
 
 /* --------------- news --------------- */
 .news{
-    margin-bottom: 42px;
+    margin-bottom: 32px;
 }
-.news .site__title{
+.news .index__title{
     padding-bottom: 14px;
     margin-bottom: 17px;
 }
 .news__item{
-    display: none;
     width:293px;
-    margin: 0 auto;
+    margin: 15px auto 20px;
 }
 .news__pic{
     width: 100%;
@@ -776,8 +822,11 @@
     letter-spacing: 0.2px;
     text-decoration: underline;
 }
-.mobile_show{
-    display: block;
+.display_show{
+    display: none;
+}
+.news_list{
+
 }
 /* --------------- /news --------------- */
 
@@ -1007,6 +1056,7 @@
 
 /* --------------- mn_content --------------- */
 .mn_content{
+    overflow: hidden;
     margin-bottom: 100px;
     color: #707070;
     font-size: 14px;
@@ -1088,6 +1138,12 @@
     position: absolute;
     left: 0;
 }
+.mn_content time{
+    display: block;
+    margin: 15px 0 15px;
+    color: #b6b6b6;
+    font-weight: 600;
+}
 .mn_content__table{
     margin: 15px 0 35px;
     border: 1px solid #c1c1c1;
@@ -1116,12 +1172,61 @@
 .mn_content tbody td{
     border-top: 1px solid #c1c1c1;
 }
-.mn_content img{
-    width: 100%;
-    margin: 15px 0 30px;
-    max-width: 570px;
+.alignleft {
+    float: left;
+    max-width: 100%;
+    margin: 5px 20px 30px 0;
+}
+.aligncenter {
+    display: block;
+    max-width: 100%;
+    margin: 5px auto 30px;
+}
+.alignright {
+    float: right;
+    max-width: 100%;
+    margin: 5px 0 30px 20px;
+}
+.alignnone {
+    display: block;
+    max-width: 100%;
+    margin: 5px 0 30px;
 }
 /* --------------- /mn_content --------------- */
+
+/* --------------- article --------------- */
+.mn_content .article__title{
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+/* --------------- /article --------------- */
+
+/* --------------- reviews-list --------------- */
+.reviews-list__item{
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.reviews-list__info{
+    float: left;
+    margin-right: 30px;
+    text-align: center;
+}
+.reviews-list__author{
+    font-style: italic;
+    line-height: 50px;
+}
+.reviews-list__name{
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.reviews-list__content{
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+}
+/* --------------- /reviews-list --------------- */
 
 @media (min-width: 768px){
 
@@ -1167,7 +1272,7 @@
     .header_inside{
         height: 215px;
     }
-    .site__title {
+    .index__title {
         margin-bottom: 15px;
     }
     .header__menu-btn {
@@ -1420,7 +1525,7 @@
         width: 100%;
         content: "";
     }
-    .news .site__title {
+    .news .index__title {
         margin-bottom: 23px;
     }
     .news__item{
@@ -1435,6 +1540,9 @@
     }
     .news__title {
         letter-spacing: -0.1px;
+    }
+    .display_show{
+        display: inline-block;
     }
     /* --------------- /news --------------- */
 
@@ -1500,7 +1608,7 @@
         order: 4;
         width: 100%;
     }
-    .photo .site__title{
+    .photo .index__title{
         margin-bottom: 14px;
     }
     .inside_content-layout  .photo .site__title{
@@ -1554,7 +1662,7 @@
         border-radius: 5px;
         background: #25b2f0 url(../pic/specialist-bg.png) no-repeat center;
     }
-    .specialist .site__title{
+    .specialist .index__title{
         margin: 0 0 22px 24px;
         padding-bottom: 16px;
         border-color: #568fbd;
@@ -1745,10 +1853,10 @@
         max-width: 940px;
         padding: 0;
     }
-    .site__title {
+    .index__title {
         margin-bottom: 20px;
     }
-    .site__title span {
+    .index__title span {
         display: inline-block;
     }
     .site__aside{
