@@ -995,6 +995,11 @@
 .mn_content tbody td{
     border-top: 1px solid #c1c1c1;
 }
+.mn_content img{
+    width: 100%;
+    margin: 15px 0 30px;
+    max-width: 570px;
+}
 /* --------------- /mn_content --------------- */
 
 @media (min-width: 768px){
