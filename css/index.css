@@ -734,7 +734,7 @@
     -webkit-transform: rotate(180deg);
 }
 .photo__title{
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     font-size: 14px;
     color: #707070;
 }
@@ -907,6 +907,9 @@
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
 }
+.our-specialists__position{
+    font-style: italic;
+}
 /* --------------- /our-specialists --------------- */
 
 /* --------------- description --------------- */
@@ -930,12 +933,13 @@
     display: inline-block;
     vertical-align: top;
     width: 100%;
+    margin-bottom: 15px;
 }
 .description__text h3{
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 .description__text p{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .description__slider{
     position: relative;
@@ -1152,6 +1156,9 @@
         -webkit-flex-align: flex-start;
         -ms-flex-align: flex-start;
         -webkit-align-items: flex-start;
+    }
+    .inside_content-layout .site__content-wrap{
+        padding-top: 50px;
     }
     .site__header {
         height: 138px;
@@ -1496,6 +1503,13 @@
     .photo .site__title{
         margin-bottom: 14px;
     }
+    .inside_content-layout  .photo .site__title{
+        font-size: 16px;
+        margin-bottom: 0;
+        padding-bottom: 10px;
+        border: none;
+        letter-spacing: .4px;
+    }
     .photo .reviews__all{
         top: auto;
         right: 0;
@@ -1621,7 +1635,6 @@
     /* --------------- our-specialists --------------- */
     .our-specialists{
         width: 100%;
-        padding-top: 45px;
     }
     .our-specialists__wrap{
         margin: 0 -15px;
@@ -1636,22 +1649,22 @@
     /* --------------- description --------------- */
     .description{
         width: 100%;
-        margin: 50px 0 20px;
+        margin-bottom: 20px;
     }
     .description__pic {
         display: inline-block;
-        margin-right: 20px;
+        margin-right: 27px;
     }
     .description__text{
-        width: 66%;
+        width: 65%;
     }
     .description__position{
         text-align: left;
     }
     .description__slider {
         height: 186px;
-        padding: 21px 78px;
-        margin: 0 0 38px 0;
+        padding: 23px 78px;
+        margin: 0 0 32px 0;
         text-align: center;
     }
     /* --------------- description --------------- */
@@ -1755,6 +1768,9 @@
         padding-top: 10px;
         margin: 0;
         border-radius: 0 0 5px 5px;
+    }
+    .inside_content-layout .site__content-wrap {
+        padding-top: 0;
     }
     .aside-menu {
         padding: 13px 11px;
@@ -1878,6 +1894,9 @@
     .photo-button-next {
         right: 22px;
     }
+    .inside_content-layout .photo__slider {
+        margin: 0 0 31px 0;
+    }
     /* --------------- /photo --------------- */
 
     /* --------------- specialist --------------- */
@@ -1944,17 +1963,17 @@
         padding-top: 0;
     }
     .our-specialists__wrap{
-        margin: 0 -15px;
+        margin: 0 -15px 26px;
     }
     .our-specialists__item{
         width: 212px;
-        margin: 0 14px 35px;
+        margin: 0 14px 41px;
     }
     /* --------------- /our-specialists --------------- */
 
     /* --------------- description --------------- */
     .description{
-        margin-top: 0;
+        margin-top: 20px;
     }
     /* --------------- description --------------- */
 }
