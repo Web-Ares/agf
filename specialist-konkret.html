@@ -25,15 +25,31 @@
     <div class="site__tabs">
 
         <!-- plastic -->
-        <a class="plastic active" href="#">Пластическая хирургия</a>
+        <a class="site__tabs-item active" href="#">Пластическая
+            хирургия</a>
         <!-- /plastic -->
 
         <!-- maxillofacial -->
-        <a class="maxillofacial" href="#">Челюстно-лицевая хирургия</a>
+        <a class="site__tabs-item" href="#">Челюстно-лицевая
+            хирургия</a>
         <!-- /maxillofacial -->
 
         <!-- stomatology -->
-        <a class="stomatology" href="#">Стоматология</a>
+        <a class="site__tabs-item" href="#"><span>Стоматология</span></a>
+        <!-- /stomatology -->
+
+        <!-- stomatology -->
+        <a class="site__tabs-item" href="#">Ортодонтия и детская
+            стоматология</a>
+        <!-- /stomatology -->
+
+        <!-- stomatology -->
+        <a class="site__tabs-item" href="#"><span>Рентгендиагностика</span></a>
+        <!-- /stomatology -->
+
+        <!-- stomatology -->
+        <a class="site__tabs-item" href="#">Зуботехническая
+            лаборатория</a>
         <!-- /stomatology -->
 
     </div>
@@ -273,23 +289,23 @@
 
                                 <!-- swiper-slide -->
                                 <div class="swiper-slide">
-                                    <div class="description__item" style="background-image: url(pic/diploma1.jpg)"></div>
+                                    <a href="#" class="description__item" style="background-image: url(pic/diploma1.jpg)"></a>
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <div class="description__item" style="background-image: url(pic/diploma2.jpg)"></div>
+                                    <a href="#" class="description__item" style="background-image: url(pic/diploma2.jpg)"></a>
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <div class="description__item" style="background-image: url(pic/diploma3.jpg)"></div>
+                                    <a href="#" class="description__item" style="background-image: url(pic/diploma3.jpg)"></a>
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <div class="description__item" style="background-image: url(pic/diploma4.jpg)"></div>
+                                    <a href="#" class="description__item" style="background-image: url(pic/diploma4.jpg)"></a>
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <div class="description__item" style="background-image: url(pic/diploma5.jpg)"></div>
+                                    <a href="#" class="description__item" style="background-image: url(pic/diploma5.jpg)"></a>
                                 </div>
 
                             </div>
@@ -476,12 +492,12 @@
                         <div class="swiper-slide">
 
                             <!-- specialist__item -->
-                            <div class="specialist__item">
+                            <a href="#" class="specialist__item">
                                 <div class="specialist__pic" style="background-image: url(pic/specialist01.jpg)"></div>
                                 <div class="specialist__name">Анжелика Всеволодовна</div>
                                 <div class="specialist__surname">ЗАКАБЛУКОВСКАЯ</div>
                                 <div class="specialist__position">Главный врач</div>
-                            </div>
+                            </a>
                             <!-- /specialist__item -->
 
                         </div>
@@ -491,12 +507,12 @@
                         <div class="swiper-slide">
 
                             <!-- specialist__item -->
-                            <div class="specialist__item">
+                            <a href="#" class="specialist__item">
                                 <div class="specialist__pic" style="background-image: url(pic/specialist02.jpg)"></div>
                                 <div class="specialist__name">Иван Иванович</div>
                                 <div class="specialist__surname">ИВАНОВ</div>
                                 <div class="specialist__position">Главный врач</div>
-                            </div>
+                            </a>
                             <!-- /specialist__item -->
 
                         </div>
@@ -506,17 +522,16 @@
                         <div class="swiper-slide">
                             <!-- specialist__item -->
 
-                            <div class="specialist__item">
+                            <a href="#" class="specialist__item">
                                 <div class="specialist__pic" style="background-image: url(pic/specialist01.jpg)"></div>
                                 <div class="specialist__name">Анжелика Всеволодовна</div>
                                 <div class="specialist__surname">ЗАКАБЛУКОВСКАЯ</div>
                                 <div class="specialist__position">Главный врач</div>
-                            </div>
+                            </a>
                             <!-- /specialist__item -->
 
                         </div>
                         <!-- /swiper-slide -->
-
 
                     </div>
                     <!-- /Swiper -->
@@ -566,23 +581,14 @@
 
             <!-- site__information-menu -->
             <div class="site__information-menu">
-
-                <div>
-                    <!-- site__information-links -->
-                    <a class="site__information-links" href="#">Об отделении</a>
-                    <a class="site__information-links" href="#">Специалисты</a>
-                    <a class="site__information-links" href="#">Фото до и после</a>
-                    <!-- /site__information-links -->
-                </div>
-
-                <div>
-                    <!-- site__information-links -->
-                    <a class="site__information-links" href="#">Отзывы</a>
-                    <a class="site__information-links" href="#">Пациентам</a>
-                    <a class="site__information-links" href="#">Контакты</a>
-                    <!-- /site__information-links -->
-                </div>
-
+                <!-- site__information-links -->
+                <a class="site__information-links" href="#">Об отделении</a>
+                <a class="site__information-links" href="#">Специалисты</a>
+                <a class="site__information-links" href="#">Фото до и после</a>
+                <a class="site__information-links" href="#">Отзывы</a>
+                <a class="site__information-links" href="#">Пациентам</a>
+                <a class="site__information-links" href="#">Контакты</a>
+                <!-- /site__information-links -->
             </div>
             <!-- /site__information-menu -->
 
@@ -590,11 +596,30 @@
             <div class="site__information-type">
 
                 <!-- site__information-stomatology -->
-                <a class="site__information-stomatology" href="#">Стоматология</a>
+                <a class="site__information-item site__information-stomatology" href="#">Стоматология</a>
                 <!-- /site__information-stomatology -->
 
                 <!-- site__information-maxillofacial -->
-                <a class="site__information-maxillofacial" href="#">Челюстно-лицевая хирургия</a>
+                <a class="site__information-item site__information-maxillofacial" href="#">Челюстно-лицевая хирургия</a>
+                <!-- /site__information-maxillofacial -->
+
+                <!-- site__information-maxillofacial -->
+                <a class="site__information-item site__information-plastic" href="#">Пластическая
+                    хирургия</a>
+                <!-- /site__information-maxillofacial -->
+
+                <!-- site__information-maxillofacial -->
+                <a class="site__information-item site__information-orthodontics" href="#">Ортодонтия
+                    и детская стоматология</a>
+                <!-- /site__information-maxillofacial -->
+
+                <!-- site__information-maxillofacial -->
+                <a class="site__information-item site__information-diagnostics" href="#">Рентгендиагностика</a>
+                <!-- /site__information-maxillofacial -->
+
+                <!-- site__information-maxillofacial -->
+                <a class="site__information-item site__information-laboratory_dental" href="#">Зуботехническая
+                    лаборатория</a>
                 <!-- /site__information-maxillofacial -->
 
             </div>

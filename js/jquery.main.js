@@ -27,6 +27,10 @@
             SlideToTop( $( this ) );
         });
 
+        $('.popup').each(function(){
+            new Popup($(this));
+        });
+
     });
 
     var SlideToTop = function( obj ) {
@@ -228,6 +232,72 @@
         _init();
     };
 
+    var Popup = function (obj) {
+
+        var _self = this,
+            _popup = obj,
+            _btnShow = $( '.site__header-request' ),
+            _form = $( '.popup__wrap'),
+            _btnClose = _popup.find( '.popup__close' ),
+            _html = $( 'html' );
+
+        var _addEvents = function () {
+
+                _btnShow.on( {
+                    click: function(){
+                        var curPopup = $( '.popup' );
+                        _showPopup( curPopup );
+                        return false;
+                    }
+                } );
+
+                _btnClose.on( {
+                    click: function() {
+                        var curPopup = $( this ).parents( '.popup' );
+                        _hidePopup( curPopup );
+                        return false;
+                    }
+                } );
+                _popup.click( function() {
+                    var curPopup = _popup;
+                    if ( _self._noClosePopup ) {
+                        _self._noClosePopup = false;
+                        return false;
+                    }
+                    _hidePopup( curPopup );
+                });
+                 _form.on({
+                    click: function(event) {
+                        event = event || window.event;
+                        event.stopPropagation();
+                    }
+                });
+            },
+            _build = function(){
+                _self._noClosePopup = false;
+            },
+            _showPopup = function( curPopup ){
+                _popup.addClass( 'popup_opened' );
+                _html.css({
+                    "overflow-y": "hidden",
+                    paddingRight: "17px"
+                });
+            },
+            _hidePopup = function(curPopup){
+                curPopup.removeClass( 'popup_opened' );
+                _html.css({
+                    "overflow-y": "scroll",
+                    paddingRight: 0
+                });
+            },
+            _init = function () {
+                _build();
+                _addEvents();
+            };
+
+        _init();
+    };
+
     var Slider = function ( obj ) {
 
         //private properties
@@ -267,7 +337,9 @@
                 slidesPerView: 1,
                 autoplay:5000,
                 speed: 2000,
-                loop: true
+                pagination: ( '.photo__point' ),
+                loop: true,
+                paginationClickable: true
             });
 
         }
@@ -278,7 +350,9 @@
                 slidesPerView: 1,
                 autoplay:5000,
                 speed: 2000,
-                loop: true
+                pagination: ( '.photo_point' ),
+                loop: true,
+                paginationClickable: true
             });
 
         }
