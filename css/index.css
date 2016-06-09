@@ -94,12 +94,10 @@
     letter-spacing: .4px;
 }
 .site__tabs{
-    height: 85px;
+    height: 174px;
     background: #8bccec;
 }
-.site__tabs .plastic,
-.site__tabs .maxillofacial,
-.site__tabs .stomatology{
+.site__tabs-item{
     display: block;
     vertical-align: top;
     padding: 5px 0 6px;
@@ -115,9 +113,7 @@
     text-decoration: none;
     cursor: default;
 }
-.site__tabs .plastic:hover,
-.site__tabs .maxillofacial:hover,
-.site__tabs .stomatology:hover{
+.site__tabs-item:hover{
     background: #009fd9;
     text-decoration: none;
 }
@@ -164,6 +160,9 @@
 .site__content-layout{
     padding: 0 13px;
     font-weight: 400;
+}
+.inside_content-layout{
+    position: relative;
 }
 .site__title{
     margin-bottom: 17px;
@@ -716,6 +715,11 @@ a.pagination__item_action:hover{
     margin-bottom: 54px;
     padding-bottom: 13px;
 }
+.inside_content-layout .photo .site__title{
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+}
 .photo .reviews__all{
     top: 50px;
     right: auto;
@@ -736,6 +740,40 @@ a.pagination__item_action:hover{
     margin: 0 auto;
     border-radius: 5px;
     background: no-repeat center;
+}
+.inside_content-layout .photo__item{
+    height: 235px;
+    border-radius: 5px 5px 5px 5px;
+    background-position: top center;
+}
+.photo__all{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #5286bf;
+    text-transform: none;
+    text-decoration: underline;
+}
+.inside_content-layout .photo__slider {
+    height: 600px;
+    margin: 0 0 70px 0;
+}
+.inside_content-layout .photo__item span{
+    display: block;
+    width: 100%;
+    height: 58px;
+    right: 0;
+    bottom: 0;
+    padding-top: 20px;
+    border-radius: 0 0 5px 5px;
+    background: #0090ff;
+    text-align: center;
+}
+.inside_content-layout .photo{
+    position: relative;
+    padding-bottom: 1px;
 }
 .swiper-slide .photo__item:first-child{
     margin-bottom: 20px;
@@ -784,6 +822,32 @@ a.pagination__item_action:hover{
     margin-bottom: 17px;
     font-size: 14px;
     color: #707070;
+}
+.photo-point {
+    position: relative;
+    max-width: 698px;
+    margin: 0 auto;
+    bottom: -34px;
+    text-align: center;
+}
+.photo-point span {
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    background: #f3f3f3;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px !important;
+    opacity: 1;
+    transition: background .3s ease, border .3s ease;
+}
+.photo .photo-point span:hover {
+    background: #0090ff;
+}
+.photo .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #0090ff !important;
 }
 /* --------------- /photo --------------- */
 
@@ -845,7 +909,7 @@ a.pagination__item_action:hover{
     padding: 0 8px;
 }
 .catalog__item {
-    margin-bottom: 16px;
+    margin-bottom: 36px;
     color: #707070;
 }
 .catalog__content {
@@ -999,12 +1063,18 @@ a.pagination__item_action:hover{
     background: #f3f3f3;
 }
 .description__item{
+    display: inline-block;
     position: relative;
     width: 98px;
     height: 140px;
     margin: 0 auto;
     border-radius: 5px;
     background: no-repeat center;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.description__item:hover{
+    opacity: .8;
 }
 /* --------------- /description --------------- */
 
@@ -1057,6 +1127,7 @@ a.pagination__item_action:hover{
 /* --------------- mn_content --------------- */
 .mn_content{
     overflow: hidden;
+    width: 100%;
     margin-bottom: 100px;
     color: #707070;
     font-size: 14px;
@@ -1157,7 +1228,6 @@ a.pagination__item_action:hover{
     background-color: #0090ff;
     color: #fff;
     font-weight: 700;
-    text-transform: uppercase;
 }
 .mn_content td,
 .mn_content th{
@@ -1172,10 +1242,10 @@ a.pagination__item_action:hover{
 .mn_content tbody td{
     border-top: 1px solid #c1c1c1;
 }
-.alignleft {
-    float: left;
-    max-width: 100%;
-    margin: 5px 20px 30px 0;
+.mn_content img{
+    width: 100%;
+    margin: 15px 0 30px;
+    max-width: 570px;
 }
 .aligncenter {
     display: block;
@@ -1228,6 +1298,122 @@ a.pagination__item_action:hover{
 }
 /* --------------- /reviews-list --------------- */
 
+/* --------------- popup--------------- */
+.popup {
+    display: block;
+    background: rgba( 0,0,0,.7 );
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+.popup__wrap {
+    position: absolute;
+    width: 275px;
+    height: 355px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    box-shadow: 0 0 10px #000;
+    padding: 19px 15px 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #f5f5f5;
+    border: 2px solid #0090ff;
+    font-size: 14px;
+    color: #2e2e2e;
+}
+.popup__wrap div.popup__close {
+    content: '';
+    background: #0090ff url("../img/close.png") no-repeat center;
+    background-size: 12px 12px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: -39px;
+    cursor: pointer;
+    left: auto;
+}
+.popup.popup_opened {
+    visibility: visible;
+    opacity: 1;
+    overflow-y: auto;
+}
+.popup__wrap > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 400px;
+    font-size: 30px;
+    color: #fff;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+}
+.popup__wrap fieldset {
+    margin-bottom: 17px;
+}
+.popup__wrap label {
+    display: inline-block;
+    font-size: 16px;
+    color: #707070;
+    margin-bottom: 9px;
+    line-height: 16px;
+}
+.popup__wrap fieldset textarea,
+.popup__wrap fieldset input {
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #707070;
+    display: block;
+    box-shadow:  #b3b3b3 inset 0 0 10px;
+}
+.popup__wrap fieldset textarea{
+    height: 97px;
+    margin-bottom: 3px;
+}
+.popup__wrap input.popup__send {
+    display: block;
+    width: 100%;
+    background: -webkit-linear-gradient(top, #fdfdfd 0%, #e5e5e5 100%);
+    font-size: 14px;
+    color: #707070;
+    text-transform: uppercase;
+    font-weight: 300;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    margin: -1px auto 0;
+    padding: 10px 0 10px;
+    -webkit-transition: color 0.3s ease, border 0.3s ease, background 0.3s ease;
+    transition: color 0.3s ease, border 0.3s ease, background 0.3s ease;
+}
+.popup__wrap input.popup__send:hover {
+    background: #2887d0;
+    color: #fff;
+}
+#pop4{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+/* --------------- /popup --------------- */
+
 @media (min-width: 768px){
 
     /* --------------- site --------------- */
@@ -1236,18 +1422,22 @@ a.pagination__item_action:hover{
         margin: 0 auto;
     }
     .site__tabs{
-        height: 26px;
+        height: 53px;
         text-align: center;
         box-shadow: 0 0 70px rgba(139, 204, 236, 0.65);
         -webkit-box-shadow: 0 0 70px rgba(139, 204, 236, 0.65);
     }
-    .site__tabs .plastic,
-    .site__tabs .maxillofacial,
-    .site__tabs .stomatology {
+    .site__tabs-item{
         display: inline-block;
-        height: 26px;
-        padding: 3px 30px 5px;
+        vertical-align: middle;
+        height: 53px;
+        padding: 7px 3px 5px;
         margin-left: -4px;
+        white-space: pre-line;
+    }
+    .site__tabs-item span{
+        padding-top: 10px;
+        display: block;
     }
     .site__content-wrap{
         display: flex;
@@ -1345,7 +1535,7 @@ a.pagination__item_action:hover{
     }
     .site__information{
         display: block;
-        height: 212px;
+        height: 253px;
         padding: 40px 0;
         background: #e6eeeb;
     }
@@ -1365,7 +1555,7 @@ a.pagination__item_action:hover{
     .site__information-logo{
         position: relative;
         width: 367px;
-        margin-bottom: 45px;
+        margin-bottom: 38px;
     }
     .site__information-name{
         position: absolute;
@@ -1379,9 +1569,9 @@ a.pagination__item_action:hover{
     }
     .site__information-menu{
         position: absolute;
-        top: 1px;
+        top: -7px;
         right: 17px;
-        width: 298px;
+        width: 122px;
         line-height: 30px;
     }
     .site__information-menu div{
@@ -1397,16 +1587,21 @@ a.pagination__item_action:hover{
     .site__information-links{
         display: block;
     }
-    .site__information-stomatology,
-    .site__information-maxillofacial{
+    .site__information-item{
         position: relative;
         display: inline-block;
         vertical-align: top;
         padding-left: 40px;
-        line-height: 32px;
+        margin-right: 10px;
+        margin-bottom: 22px;
+        line-height: 20px;
+        white-space: pre-line;
+
     }
-    .site__information-stomatology{
-        margin-right: 34px;
+    .site__information-orthodontics{
+        width: 224px;
+        padding-left: 50px;
+        white-space: pre-line;
     }
     .site__information-stomatology:before{
         position: absolute;
@@ -1428,6 +1623,44 @@ a.pagination__item_action:hover{
         background-size: contain;
         content: "";
     }
+    .site__information-laboratory_dental:before,
+    .site__information-diagnostics:before,
+    .site__information-orthodontics:before,
+    .site__information-plastic:before{
+        left: 0;
+        position: absolute;
+        content: "";
+    }
+    .site__information-plastic:before{
+        top: -8px;
+        width: 34px;
+        height: 37px;
+        background: url("../img/plastic.png")no-repeat center;
+        background-size: contain;
+    }
+    .site__information-orthodontics:before{
+        top: 3px;
+        width: 40px;
+        height: 20px;
+        background: url("../img/orthodontics.png")no-repeat center;
+        background-size: contain;
+    }
+    .site__information-diagnostics:before{
+        top: -6px;
+        width: 36px;
+        height: 38px;
+        background: url("../img/diagnostics.png")no-repeat center;
+        background-size: contain;
+    }
+    .site__information-laboratory_dental:before{
+        left: -9px;
+        top: -9px;
+        width: 41px;
+        height: 40px;
+        background: url("../img/laboratory_dental.png")no-repeat center;
+        background-size: contain;
+    }
+
     /* --------------- /site --------------- */
 
     /* --------------- btn-up --------------- */
@@ -1458,7 +1691,7 @@ a.pagination__item_action:hover{
         line-height: 25px;
     }
     .slider__title h2 {
-        padding: 0 90px 13px 0;
+        padding: 0 60px 13px 0;
         margin-bottom: 16px;
         line-height: 40px;
     }
@@ -1566,7 +1799,7 @@ a.pagination__item_action:hover{
         -webkit-align-items: flex-start;
         width: 720px;
         margin: 0 auto;
-        padding: 5px 0;
+        padding: 5px 0 0;
     }
     .catalog__img {
         display: flex;
@@ -1612,11 +1845,20 @@ a.pagination__item_action:hover{
         margin-bottom: 14px;
     }
     .inside_content-layout  .photo .site__title{
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 0;
-        padding-bottom: 10px;
+        padding-bottom: 19px;
         border: none;
-        letter-spacing: .4px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: initial;
+    }
+    .inside_content-layout .photo__slider{
+        height: 406px;
+        margin: 0 0 70px 0;
+    }
+    .inside_content-layout .photo__item {
+        height: 343px;
     }
     .photo .reviews__all{
         top: auto;
@@ -1683,6 +1925,17 @@ a.pagination__item_action:hover{
         color: #fff;
         letter-spacing: .3px;
         text-align: center;
+        transition: opacity .3s ease;
+        -webkit-transition: opacity .3s ease;
+    }
+    .specialist__item:hover{
+        opacity: .8;
+    }
+    .specialist__item:hover .specialist__name{
+        text-decoration: none;
+    }
+    .specialist__item:hover .specialist__surname{
+        text-decoration: none;
     }
     .specialist__pic{
         width: 100%;
@@ -1694,12 +1947,16 @@ a.pagination__item_action:hover{
         margin-bottom: 4px;
         font-weight: 700;
         text-decoration: underline;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
     }
     .specialist__surname{
         margin-bottom: 6px;
         font-size: 18px;
         font-weight: 700;
         text-decoration: underline;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
     }
     .specialist__position{
         font-style: italic;
@@ -1808,7 +2065,7 @@ a.pagination__item_action:hover{
         margin-bottom: 30px;
     }
     .site .header_inside{
-        height: 176px;
+        height: 106px;
     }
     .site__header-tel {
         top: 18px;
@@ -1828,9 +2085,12 @@ a.pagination__item_action:hover{
     }
     .site__location {
         width: 300px;
-        top: 94px;
+        top: 115px;
         right: 50%;
         margin-right: 164px;
+    }
+    .site__tabs-item {
+        padding: 7px 17px 5px;
     }
     .location_inside{
         top: 68px;
@@ -1912,8 +2172,16 @@ a.pagination__item_action:hover{
     .site__information-wrap {
         padding: 0;
     }
+    .site__information-type{
+        padding-right: 150px;
+    }
     .site__information-menu {
         right: -8px;
+    }
+    .site__information-item{
+        margin-right: 20px;
+        margin-bottom: 37px;
+        white-space: normal;
     }
     /* --------------- /site --------------- */
 
@@ -2003,7 +2271,10 @@ a.pagination__item_action:hover{
         right: 22px;
     }
     .inside_content-layout .photo__slider {
-        margin: 0 0 31px 0;
+        margin: 0 0 79px 0;
+    }
+    .inside_content-layout .photo {
+        margin-bottom: 128px;
     }
     /* --------------- /photo --------------- */
 
@@ -2041,11 +2312,14 @@ a.pagination__item_action:hover{
         transform: translateX(-51%);
         -webkit-transform: translateX(-51%);
     }
+    .header_inside .logo {
+        top: 25px;
+    }
     /* --------------- /logo --------------- */
 
     /* --------------- catalog --------------- */
     .catalog{
-        padding: 0 0 4px;
+        padding: 30px 0 4px;
     }
     .catalog__wrap {
         width: 940px;
